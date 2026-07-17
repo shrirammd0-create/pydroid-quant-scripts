@@ -32,6 +32,13 @@ except ImportError:
     sys.exit(1)
 
 try:
+    # Force real exceptions (incl. rate limits) to surface instead of being
+    # silently logged-and-swallowed, so our retry/backoff logic can react.
+    yf.config.debug.hide_exceptions = False
+except Exception:
+    pass
+
+try:
     import requests
     _HAVE_REQUESTS = True
 except ImportError:
@@ -44,9 +51,13 @@ pd.options.mode.chained_assignment = None
 # CONFIG
 # ============================================================================
 
-RETRY_ATTEMPTS = 3
-RETRY_DELAY_SEC = 2
+RETRY_ATTEMPTS = 4
+RETRY_BASE_DELAY_SEC = 4        # generic transient errors: 4s, 8s, 16s exponential backoff
+FETCH_PACING_SEC = 3            # proactive gap before every outbound request (avoid bursts)
+RATE_LIMIT_COOLDOWN_SEC = 45    # long cooldown once Yahoo/CFTC signals a rate limit
 REQUEST_TIMEOUT = 20
+
+RATE_LIMIT_KEYWORDS = ("rate limit", "ratelimit", "too many requests", "429")
 
 # Rows kept in each printed CSV block (mobile-copy friendly, still dense)
 TAIL_DAILY = 15
@@ -79,10 +90,37 @@ COT_MM_SHORT_CANDIDATES = ["M_Money_Positions_Short_All", "MMoney_Positions_Shor
 # NETWORK LAYER  (mobile-stability: 5G <-> WiFi handoffs drop connections)
 # ============================================================================
 
-def retry_call(func, *args, attempts=RETRY_ATTEMPTS, delay=RETRY_DELAY_SEC, label="operation", **kwargs):
-    """Generic retry wrapper: up to `attempts` tries with a short delay between them."""
+# Shared across every retry_call invocation in this run: once ANY request gets
+# rate-limited, every subsequent request (any ticker) waits out the same
+# cooldown instead of immediately re-hammering an endpoint that just blocked us.
+_net_state = {"cooldown_until": 0.0}
+
+
+def _is_rate_limit_error(exc):
+    if type(exc).__name__ == "YFRateLimitError":
+        return True
+    msg = str(exc).lower()
+    return any(k in msg for k in RATE_LIMIT_KEYWORDS)
+
+
+def _throttle_before_request():
+    """Wait out any active rate-limit cooldown, else apply baseline pacing."""
+    now = time.time()
+    if now < _net_state["cooldown_until"]:
+        wait = _net_state["cooldown_until"] - now
+        print(f"[INFO] Rate-limit cooldown active -- waiting {wait:.0f}s before next request...")
+        time.sleep(wait)
+    else:
+        time.sleep(FETCH_PACING_SEC)
+
+
+def retry_call(func, *args, attempts=RETRY_ATTEMPTS, label="operation", **kwargs):
+    """Retry wrapper with proactive pacing, exponential backoff for generic
+    errors, and a long dedicated cooldown whenever the failure looks like a
+    server-side rate limit (short retries are futile against those)."""
     last_err = None
     for i in range(1, attempts + 1):
+        _throttle_before_request()
         try:
             result = func(*args, **kwargs)
             if result is None:
@@ -95,21 +133,27 @@ def retry_call(func, *args, attempts=RETRY_ATTEMPTS, delay=RETRY_DELAY_SEC, labe
         except Exception as e:
             last_err = e
             print(f"[WARN] {label}: attempt {i}/{attempts} failed -> {e}")
-            if i < attempts:
-                time.sleep(delay)
+            if _is_rate_limit_error(e):
+                _net_state["cooldown_until"] = time.time() + RATE_LIMIT_COOLDOWN_SEC
+            elif i < attempts:
+                time.sleep(RETRY_BASE_DELAY_SEC * (2 ** (i - 1)))
     print(f"[ERROR] {label}: all {attempts} attempts failed -> {last_err}")
     return None
 
 
 def download_yf(symbol, period, interval):
     def _dl():
-        df = yf.download(
-            symbol,
+        # yf.download() silently swallows per-ticker errors (incl. rate
+        # limits) into a log line and returns an empty frame, which defeats
+        # our retry/backoff logic. Ticker.history() raises real exceptions
+        # (YFRateLimitError always propagates regardless of config), so we
+        # call it directly and can react to what actually went wrong.
+        df = yf.Ticker(symbol).history(
             period=period,
             interval=interval,
-            progress=False,
             auto_adjust=False,
-            threads=False,
+            actions=False,
+            timeout=REQUEST_TIMEOUT,
         )
         if df is None or df.empty:
             raise ValueError(f"no data for {symbol}")
