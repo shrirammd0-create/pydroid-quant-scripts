@@ -5,45 +5,37 @@ Gold (XAUUSD) Institutional Quant Data Pipeline
 Multi-timeframe Gold/Silver/DXY/GVZ/TNX market data + live CFTC Commitments
 of Traders (COT) fundamentals, reduced to a dense, copy-pasteable CSV report.
 
-Built to run unmodified inside Pydroid 3 on Android (tested target: Pixel 6).
+No yfinance / curl_cffi dependency: Yahoo Finance's public chart JSON
+endpoint is called directly over plain HTTPS with `requests` + `json`, so
+this runs unmodified on Pythonista for iPad (no C-extension compiler
+available) as well as Pydroid 3 on Android.
 
-REQUIRED PACKAGES (install once inside Pydroid 3 -> Pip):
-    pip install yfinance pandas numpy requests
+REQUIRED PACKAGES:
+    pip install requests pandas numpy
+(requests ships pre-installed in both Pythonista and Pydroid 3.)
 
 USAGE:
-    Run the script (Pydroid 3 "Run" button, or `python gold_quant_pipeline.py`
-    in the Pydroid terminal). Wait for the final report, then long-press to
+    Run the script. Wait for the final report, then long-press to
     "Select All" + "Copy" the block between the dashed borders.
 """
 
 import io
 import sys
 import time
+import json
 import traceback
-from datetime import datetime, timezone
+import urllib.parse
+from datetime import datetime, timezone, timedelta
 
 import numpy as np
 import pandas as pd
 
 try:
-    import yfinance as yf
-except ImportError:
-    print("Missing dependency 'yfinance'. In Pydroid 3, open Pip and install: yfinance")
-    sys.exit(1)
-
-try:
-    # Force real exceptions (incl. rate limits) to surface instead of being
-    # silently logged-and-swallowed, so our retry/backoff logic can react.
-    yf.config.debug.hide_exceptions = False
-except Exception:
-    pass
-
-try:
     import requests
-    _HAVE_REQUESTS = True
 except ImportError:
-    _HAVE_REQUESTS = False
-    import urllib.request
+    print("Missing dependency 'requests'. It ships pre-installed with Pythonista and "
+          "Pydroid 3; if missing, install via Pip/StaSh: pip install requests")
+    sys.exit(1)
 
 pd.options.mode.chained_assignment = None
 
@@ -74,6 +66,17 @@ TICKERS = {
     "TNX_MACRO":       {"symbol": "^TNX",      "period": "1mo", "interval": "1d"},
 }
 
+# Yahoo's chart endpoint is queried with explicit period1/period2 (unix epoch)
+# rather than the "range" keyword, since only a small documented set of range
+# values (1d,5d,1mo,3mo,...) is guaranteed valid -- arbitrary day counts like
+# "3d"/"7d" are not. A small buffer is added so weekends/holidays don't starve
+# the window.
+PERIOD_LOOKBACK = {
+    "1mo": timedelta(days=32),
+    "7d": timedelta(days=8),
+    "3d": timedelta(days=4),
+}
+
 CFTC_DISAGG_URL = "https://www.cftc.gov/dea/newcot/f_disagg.txt"
 
 COT_NAME_COL_CANDIDATES = ["Market_and_Exchange_Names", "Market_and_Exchange_Name"]
@@ -97,8 +100,6 @@ _net_state = {"cooldown_until": 0.0}
 
 
 def _is_rate_limit_error(exc):
-    if type(exc).__name__ == "YFRateLimitError":
-        return True
     msg = str(exc).lower()
     return any(k in msg for k in RATE_LIMIT_KEYWORDS)
 
@@ -141,40 +142,128 @@ def retry_call(func, *args, attempts=RETRY_ATTEMPTS, label="operation", **kwargs
     return None
 
 
-def download_yf(symbol, period, interval):
-    def _dl():
-        # yf.download() silently swallows per-ticker errors (incl. rate
-        # limits) into a log line and returns an empty frame, which defeats
-        # our retry/backoff logic. Ticker.history() raises real exceptions
-        # (YFRateLimitError always propagates regardless of config), so we
-        # call it directly and can react to what actually went wrong.
-        df = yf.Ticker(symbol).history(
-            period=period,
-            interval=interval,
-            auto_adjust=False,
-            actions=False,
-            timeout=REQUEST_TIMEOUT,
-        )
-        if df is None or df.empty:
-            raise ValueError(f"no data for {symbol}")
-        if isinstance(df.columns, pd.MultiIndex):
-            df.columns = df.columns.get_level_values(0)
-        return df.dropna(how="all")
+# ---- Yahoo Finance raw JSON chart endpoint (no yfinance / curl_cffi) ------
 
-    result = retry_call(_dl, label=f"yfinance {symbol} [{interval}]")
+YAHOO_HOSTS = ["query1.finance.yahoo.com", "query2.finance.yahoo.com"]
+YAHOO_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "Accept": "application/json,text/plain,*/*",
+    "Accept-Language": "en-US,en;q=0.9",
+}
+
+_yahoo_session = requests.Session()
+_yahoo_session.headers.update(YAHOO_HEADERS)
+_crumb_state = {"value": None, "attempted": False}
+
+
+def _get_yahoo_crumb():
+    """Best-effort auth crumb. Plain historical chart requests usually work
+    without one; if Yahoo starts requiring it we already have a session with
+    warmed-up cookies, so try once per run and cache the result either way."""
+    if _crumb_state["attempted"]:
+        return _crumb_state["value"]
+    _crumb_state["attempted"] = True
+    try:
+        _yahoo_session.get("https://fc.yahoo.com", timeout=REQUEST_TIMEOUT)
+    except Exception:
+        pass
+    for host in YAHOO_HOSTS:
+        try:
+            r = _yahoo_session.get(f"https://{host}/v1/test/getcrumb", timeout=REQUEST_TIMEOUT)
+            text = (r.text or "").strip()
+            if r.status_code == 200 and text and "<html" not in text.lower():
+                _crumb_state["value"] = text
+                break
+        except Exception:
+            continue
+    return _crumb_state["value"]
+
+
+def fetch_yahoo_chart(symbol, lookback, interval):
+    """Pull raw OHLCV chart JSON straight from Yahoo Finance's public
+    /v8/finance/chart endpoint -- the same backend yfinance itself scrapes --
+    using only `requests` + `json` (no compiled extensions required)."""
+    end_dt = datetime.now(timezone.utc)
+    start_dt = end_dt - lookback
+    encoded_symbol = urllib.parse.quote(symbol, safe="")
+
+    params = {
+        "period1": int(start_dt.timestamp()),
+        "period2": int(end_dt.timestamp()),
+        "interval": interval,
+        "includePrePost": "false",
+        "events": "div,splits",
+    }
+    crumb = _get_yahoo_crumb()
+    if crumb:
+        params["crumb"] = crumb
+
+    last_err = None
+    for host in YAHOO_HOSTS:
+        url = f"https://{host}/v8/finance/chart/{encoded_symbol}"
+        try:
+            resp = _yahoo_session.get(url, params=params, timeout=REQUEST_TIMEOUT)
+            if resp.status_code == 429:
+                raise RuntimeError(f"HTTP 429 Too Many Requests from {host}")
+            resp.raise_for_status()
+            payload = json.loads(resp.text)
+            chart = payload.get("chart", {})
+            if chart.get("error"):
+                raise ValueError(f"Yahoo chart API error for {symbol}: {chart['error']}")
+            results = chart.get("result")
+            if not results:
+                raise ValueError(f"empty chart result for {symbol}")
+            return results[0]
+        except Exception as e:
+            last_err = e
+            continue
+    raise last_err if last_err is not None else RuntimeError(f"failed to fetch {symbol}")
+
+
+def parse_chart_result(result, symbol):
+    """Turn one Yahoo chart 'result' object into an Open/High/Low/Close/Volume
+    DataFrame indexed by UTC datetime -- identical shape to what the rest of
+    this pipeline (quant engine, reporting) already expects."""
+    timestamps = result.get("timestamp")
+    quotes = result.get("indicators", {}).get("quote", [{}])
+    if not timestamps or not quotes:
+        raise ValueError(f"malformed chart payload for {symbol}")
+    quote = quotes[0]
+    idx = pd.to_datetime(timestamps, unit="s", utc=True)
+    df = pd.DataFrame(
+        {
+            "Open": quote.get("open"),
+            "High": quote.get("high"),
+            "Low": quote.get("low"),
+            "Close": quote.get("close"),
+            "Volume": quote.get("volume"),
+        },
+        index=idx,
+    )
+    df = df.dropna(how="all")
+    if df.empty:
+        raise ValueError(f"no usable bars for {symbol}")
+    return df
+
+
+def download_yf(symbol, period, interval):
+    lookback = PERIOD_LOOKBACK.get(period, timedelta(days=31))
+
+    def _dl():
+        result = fetch_yahoo_chart(symbol, lookback, interval)
+        return parse_chart_result(result, symbol)
+
+    result = retry_call(_dl, label=f"Yahoo chart {symbol} [{interval}]")
     return result if result is not None else pd.DataFrame()
 
 
 def download_cftc_text(url=CFTC_DISAGG_URL):
     def _dl():
-        headers = {"User-Agent": "Mozilla/5.0 (Linux; Android 13; Pixel 6) GoldQuantPipeline/1.0"}
-        if _HAVE_REQUESTS:
-            resp = requests.get(url, timeout=REQUEST_TIMEOUT, headers=headers)
-            resp.raise_for_status()
-            return resp.text
-        req = urllib.request.Request(url, headers=headers)
-        with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as r:
-            return r.read().decode("utf-8", errors="ignore")
+        headers = {"User-Agent": YAHOO_HEADERS["User-Agent"]}
+        resp = requests.get(url, timeout=REQUEST_TIMEOUT, headers=headers)
+        resp.raise_for_status()
+        return resp.text
 
     return retry_call(_dl, label="CFTC COT report download")
 
@@ -443,7 +532,7 @@ def build_summary_rows(gold_macro, gold_struct, gold_intra_q, silver_intra,
 def main():
     print("=" * 80)
     print("GOLD (XAUUSD) INSTITUTIONAL QUANT DATA PIPELINE")
-    print(f"Generated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')} UTC  |  Pydroid3 / Pixel6")
+    print(f"Generated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')} UTC  |  Yahoo raw-JSON (no yfinance)")
     print("=" * 80)
 
     # ---- 1. Fetch phase (each call retries up to RETRY_ATTEMPTS times) ----
