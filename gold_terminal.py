@@ -6,38 +6,65 @@ Multi-timeframe Gold/Silver/DXY/GVZ/TNX market data + live CFTC Commitments
 of Traders (COT) fundamentals, reduced to a dense, copy-pasteable CSV report.
 
 No yfinance / curl_cffi dependency: Yahoo Finance's public chart JSON
-endpoint is called directly over plain HTTPS with `requests` + `json`, so
-this runs unmodified on Pythonista for iPad (no C-extension compiler
-available) as well as Pydroid 3 on Android.
+endpoint is called directly over plain HTTPS with `requests` + `json`.
 
 REQUIRED PACKAGES:
-    pip install requests pandas numpy
-(requests ships pre-installed in both Pythonista and Pydroid 3.)
+    pip install streamlit requests pandas numpy
 
 USAGE:
-    Run the script. Wait for the final report, then long-press to
-    "Select All" + "Copy" the block between the dashed borders.
+    streamlit run gold_terminal.py
+    Wait for the run to finish, then use the copy icon on the code block
+    (or long-press -> Select All -> Copy on mobile Safari/Chrome) to grab
+    the report between the dashed borders.
 """
 
 import io
-import sys
 import time
 import json
-import traceback
 import urllib.parse
 from datetime import datetime, timezone, timedelta
 
 import numpy as np
 import pandas as pd
+import streamlit as st
 
 try:
     import requests
 except ImportError:
-    print("Missing dependency 'requests'. It ships pre-installed with Pythonista and "
-          "Pydroid 3; if missing, install via Pip/StaSh: pip install requests")
-    sys.exit(1)
+    st.error("Missing dependency 'requests'. Add it to requirements.txt: pip install requests")
+    st.stop()
 
 pd.options.mode.chained_assignment = None
+
+st.set_page_config(page_title="Gold Quant Terminal", layout="wide")
+st.title("Gold (XAUUSD) Institutional Quant Data Pipeline")
+
+# Collects every line that used to go to the terminal via print() so it can
+# be rendered as one block at the end via st.code(), byte-for-byte identical
+# to the original CLI output.
+_output_lines = []
+
+
+def emit(line=""):
+    _output_lines.append(line)
+
+
+# Live network/fetch diagnostics (retries, cooldowns, schema warnings) are
+# noisy and only useful while the pipeline is running, so they go to their
+# own collapsible log instead of cluttering the final report.
+_log_panel = st.expander("Network / fetch log", expanded=False)
+
+
+def log_info(msg):
+    _log_panel.info(msg)
+
+
+def log_warn(msg):
+    _log_panel.warning(msg)
+
+
+def log_error(msg):
+    _log_panel.error(msg)
 
 # ============================================================================
 # CONFIG
@@ -109,7 +136,7 @@ def _throttle_before_request():
     now = time.time()
     if now < _net_state["cooldown_until"]:
         wait = _net_state["cooldown_until"] - now
-        print(f"[INFO] Rate-limit cooldown active -- waiting {wait:.0f}s before next request...")
+        log_info(f"Rate-limit cooldown active -- waiting {wait:.0f}s before next request...")
         time.sleep(wait)
     else:
         time.sleep(FETCH_PACING_SEC)
@@ -133,12 +160,12 @@ def retry_call(func, *args, attempts=RETRY_ATTEMPTS, label="operation", **kwargs
             return result
         except Exception as e:
             last_err = e
-            print(f"[WARN] {label}: attempt {i}/{attempts} failed -> {e}")
+            log_warn(f"{label}: attempt {i}/{attempts} failed -> {e}")
             if _is_rate_limit_error(e):
                 _net_state["cooldown_until"] = time.time() + RATE_LIMIT_COOLDOWN_SEC
             elif i < attempts:
                 time.sleep(RETRY_BASE_DELAY_SEC * (2 ** (i - 1)))
-    print(f"[ERROR] {label}: all {attempts} attempts failed -> {last_err}")
+    log_error(f"{label}: all {attempts} attempts failed -> {last_err}")
     return None
 
 
@@ -287,7 +314,7 @@ def parse_cot_gold(raw_text):
     try:
         df = pd.read_csv(io.StringIO(raw_text), engine="python")
     except Exception as e:
-        print(f"[ERROR] CFTC text failed CSV parse: {e}")
+        log_error(f"CFTC text failed CSV parse: {e}")
         return None
 
     df.columns = [str(c).strip().strip('"') for c in df.columns]
@@ -298,7 +325,7 @@ def parse_cot_gold(raw_text):
     mm_short_col = _first_present(df.columns, COT_MM_SHORT_CANDIDATES)
 
     if not name_col or not mm_long_col or not mm_short_col:
-        print("[WARN] CFTC schema drift detected -- required columns not found, skipping COT block.")
+        log_warn("CFTC schema drift detected -- required columns not found, skipping COT block.")
         return None
 
     names = df[name_col].astype(str)
@@ -307,7 +334,7 @@ def parse_cot_gold(raw_text):
     if gold_df.empty:
         gold_df = df[names.str.contains("GOLD", case=False, na=False)]
     if gold_df.empty:
-        print("[WARN] No GOLD rows located in CFTC report.")
+        log_warn("No GOLD rows located in CFTC report.")
         return None
 
     if date_col:
@@ -465,18 +492,18 @@ def last_val(df, col):
 
 
 def print_csv_section(title, df, tail=None):
-    print("-" * 80)
-    print(f"[{title}")
+    emit("-" * 80)
+    emit(f"[{title}")
     if df is None or df.empty:
-        print("NO_DATA_AVAILABLE")
-        print("-" * 80)
+        emit("NO_DATA_AVAILABLE")
+        emit("-" * 80)
         return
     out = df.tail(tail) if tail else df
     out = out.reset_index()
     out.columns = ["Datetime"] + list(out.columns[1:])
     csv_text = out.to_csv(index=False, float_format="%.6f")
-    print(csv_text.rstrip("\n"))
-    print("-" * 80)
+    emit(csv_text.rstrip("\n"))
+    emit("-" * 80)
 
 
 def build_summary_rows(gold_macro, gold_struct, gold_intra_q, silver_intra,
@@ -530,22 +557,23 @@ def build_summary_rows(gold_macro, gold_struct, gold_intra_q, silver_intra,
 # ============================================================================
 
 def main():
-    print("=" * 80)
-    print("GOLD (XAUUSD) INSTITUTIONAL QUANT DATA PIPELINE")
-    print(f"Generated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')} UTC  |  Yahoo raw-JSON (no yfinance)")
-    print("=" * 80)
+    emit("=" * 80)
+    emit("GOLD (XAUUSD) INSTITUTIONAL QUANT DATA PIPELINE")
+    emit(f"Generated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')} UTC  |  Yahoo raw-JSON (no yfinance)")
+    emit("=" * 80)
 
     # ---- 1. Fetch phase (each call retries up to RETRY_ATTEMPTS times) ----
-    gold_macro = download_yf(**TICKERS["GOLD_MACRO"])
-    gold_struct = download_yf(**TICKERS["GOLD_STRUCT"])
-    gold_intra = download_yf(**TICKERS["GOLD_INTRADAY"])
-    silver_intra = download_yf(**TICKERS["SILVER_INTRADAY"])
-    dxy_intra = download_yf(**TICKERS["DXY_INTRADAY"])
-    gvz_intra = download_yf(**TICKERS["GVZ_INTRADAY"])
-    tnx_macro = download_yf(**TICKERS["TNX_MACRO"])
+    with st.spinner("Fetching market data..."):
+        gold_macro = download_yf(**TICKERS["GOLD_MACRO"])
+        gold_struct = download_yf(**TICKERS["GOLD_STRUCT"])
+        gold_intra = download_yf(**TICKERS["GOLD_INTRADAY"])
+        silver_intra = download_yf(**TICKERS["SILVER_INTRADAY"])
+        dxy_intra = download_yf(**TICKERS["DXY_INTRADAY"])
+        gvz_intra = download_yf(**TICKERS["GVZ_INTRADAY"])
+        tnx_macro = download_yf(**TICKERS["TNX_MACRO"])
 
-    cot_text = download_cftc_text()
-    cot_data = parse_cot_gold(cot_text)
+        cot_text = download_cftc_text()
+        cot_data = parse_cot_gold(cot_text)
 
     # ---- 2. Quant engine (vectorized) ----
     gold_intra_q = compute_intraday_quant_engine(gold_intra)
@@ -559,13 +587,13 @@ def main():
         gsr_df, dxy_intra_q, gvz_intra, tnx_macro, pivots, cot_data,
     )
 
-    print("-" * 80)
-    print("[1] MARKET SNAPSHOT SUMMARY (CSV)")
-    print("-" * 80)
-    print("Metric,Value")
+    emit("-" * 80)
+    emit("[1] MARKET SNAPSHOT SUMMARY (CSV)")
+    emit("-" * 80)
+    emit("Metric,Value")
     for k, v in summary_rows:
-        print(f"{k},{v}")
-    print("-" * 80)
+        emit(f"{k},{v}")
+    emit("-" * 80)
 
     print_csv_section("2] GOLD MACRO - 1MO / 1D (tail)", gold_macro, tail=TAIL_DAILY)
     print_csv_section("3] GOLD STRUCTURAL - 7D / 1H (tail)", gold_struct, tail=TAIL_HOURLY)
@@ -579,17 +607,17 @@ def main():
     print_csv_section("8] GOLD VIX (GVZ) IMPLIED VOL - 3D / 15M (tail)", gvz_intra, tail=TAIL_15M)
     print_csv_section("9] US 10Y TREASURY YIELD (TNX) - 1MO / 1D (tail)", tnx_macro, tail=TAIL_DAILY)
 
-    print("=" * 80)
-    print("END OF OUTPUT -- LONG-PRESS ABOVE, SELECT ALL, COPY")
-    print("=" * 80)
+    emit("=" * 80)
+    emit("END OF OUTPUT -- LONG-PRESS ABOVE, SELECT ALL, COPY")
+    emit("=" * 80)
+
+    output_string = "\n".join(_output_lines)
+    st.code(output_string, language="csv")
 
 
 if __name__ == "__main__":
     try:
         main()
-    except Exception:
-        print("-" * 80)
-        print("[FATAL] Unhandled exception in pipeline:")
-        traceback.print_exc()
-        print("-" * 80)
-        sys.exit(1)
+    except Exception as e:
+        st.error("Unhandled exception in pipeline:")
+        st.exception(e)
