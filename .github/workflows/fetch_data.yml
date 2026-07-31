@@ -1,0 +1,42 @@
+name: Fetch Gold Market Data
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Guard against an overrunning fetch overlapping the next 15-minute trigger,
+# which could otherwise race two git-auto-commit-action pushes against
+# each other.
+concurrency:
+  group: fetch-market-data
+  cancel-in-progress: true
+
+jobs:
+  fetch-and-commit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install requests pandas numpy
+
+      - name: Run data fetch pipeline
+        run: python gold_terminal.py
+
+      - name: Commit and push market_data.txt
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-update market_data.txt [skip ci]"
+          file_pattern: market_data.txt
