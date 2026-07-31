@@ -553,6 +553,45 @@ def build_summary_rows(gold_macro, gold_struct, gold_intra_q, silver_intra,
 
 
 # ============================================================================
+# DATA FETCH ORCHESTRATION
+# ============================================================================
+
+# Streamlit reruns this whole script top-to-bottom on every page load and
+# every widget interaction. Without caching, that means a fresh round of
+# Yahoo/CFTC requests every single rerun -- which is what was tripping the
+# 429s. @st.cache_data memoizes the return value for `ttl` seconds (15 min
+# here), so within that window a rerun reuses the cached DataFrames/dict
+# instead of hitting the network again. An explicit pause between each
+# ticker request additionally spreads out the requests that DO happen on a
+# cache miss, on top of the existing per-attempt pacing/backoff inside
+# retry_call().
+TICKER_FETCH_DELAY_SEC = 2
+
+
+@st.cache_data(ttl=900, show_spinner="Fetching market data...")
+def fetch_all_market_data():
+    gold_macro = download_yf(**TICKERS["GOLD_MACRO"])
+    time.sleep(TICKER_FETCH_DELAY_SEC)
+    gold_struct = download_yf(**TICKERS["GOLD_STRUCT"])
+    time.sleep(TICKER_FETCH_DELAY_SEC)
+    gold_intra = download_yf(**TICKERS["GOLD_INTRADAY"])
+    time.sleep(TICKER_FETCH_DELAY_SEC)
+    silver_intra = download_yf(**TICKERS["SILVER_INTRADAY"])
+    time.sleep(TICKER_FETCH_DELAY_SEC)
+    dxy_intra = download_yf(**TICKERS["DXY_INTRADAY"])
+    time.sleep(TICKER_FETCH_DELAY_SEC)
+    gvz_intra = download_yf(**TICKERS["GVZ_INTRADAY"])
+    time.sleep(TICKER_FETCH_DELAY_SEC)
+    tnx_macro = download_yf(**TICKERS["TNX_MACRO"])
+    time.sleep(TICKER_FETCH_DELAY_SEC)
+
+    cot_text = download_cftc_text()
+    cot_data = parse_cot_gold(cot_text)
+
+    return gold_macro, gold_struct, gold_intra, silver_intra, dxy_intra, gvz_intra, tnx_macro, cot_data
+
+
+# ============================================================================
 # MAIN
 # ============================================================================
 
@@ -562,18 +601,9 @@ def main():
     emit(f"Generated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')} UTC  |  Yahoo raw-JSON (no yfinance)")
     emit("=" * 80)
 
-    # ---- 1. Fetch phase (each call retries up to RETRY_ATTEMPTS times) ----
-    with st.spinner("Fetching market data..."):
-        gold_macro = download_yf(**TICKERS["GOLD_MACRO"])
-        gold_struct = download_yf(**TICKERS["GOLD_STRUCT"])
-        gold_intra = download_yf(**TICKERS["GOLD_INTRADAY"])
-        silver_intra = download_yf(**TICKERS["SILVER_INTRADAY"])
-        dxy_intra = download_yf(**TICKERS["DXY_INTRADAY"])
-        gvz_intra = download_yf(**TICKERS["GVZ_INTRADAY"])
-        tnx_macro = download_yf(**TICKERS["TNX_MACRO"])
-
-        cot_text = download_cftc_text()
-        cot_data = parse_cot_gold(cot_text)
+    # ---- 1. Fetch phase (cached 15 min; each call retries up to RETRY_ATTEMPTS times) ----
+    (gold_macro, gold_struct, gold_intra, silver_intra,
+     dxy_intra, gvz_intra, tnx_macro, cot_data) = fetch_all_market_data()
 
     # ---- 2. Quant engine (vectorized) ----
     gold_intra_q = compute_intraday_quant_engine(gold_intra)
