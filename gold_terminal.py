@@ -1,70 +1,57 @@
 #!/usr/bin/env python3
 """
-Gold (XAUUSD) Institutional Quant Data Pipeline
-=================================================
+Gold (XAUUSD) Institutional Quant Data Pipeline -- pre-fetch worker
+=====================================================================
 Multi-timeframe Gold/Silver/DXY/GVZ/TNX market data + live CFTC Commitments
-of Traders (COT) fundamentals, reduced to a dense, copy-pasteable CSV report.
+of Traders (COT) fundamentals, reduced to a dense CSV report and written to
+market_data.txt. This script has no Streamlit dependency and does no
+rendering; it's the data-producing half of a "pre-fetched" architecture --
+run it on a schedule (cron, GitHub Actions, etc.) and let app.py (the
+Streamlit frontend) just read the file it writes, so the web page loads
+instantly and never talks to Yahoo/CFTC itself.
 
 No yfinance / curl_cffi dependency: Yahoo Finance's public chart JSON
 endpoint is called directly over plain HTTPS with `requests` + `json`.
 
 REQUIRED PACKAGES:
-    pip install streamlit requests pandas numpy
+    pip install requests pandas numpy
 
 USAGE:
-    streamlit run gold_terminal.py
-    Wait for the run to finish, then use the copy icon on the code block
-    (or long-press -> Select All -> Copy on mobile Safari/Chrome) to grab
-    the report between the dashed borders.
+    python gold_terminal.py
+    Writes the full report to market_data.txt next to this script.
 """
 
 import io
+import sys
 import time
 import json
+import traceback
 import urllib.parse
+import pathlib
 from datetime import datetime, timezone, timedelta
 
 import numpy as np
 import pandas as pd
-import streamlit as st
 
 try:
     import requests
 except ImportError:
-    st.error("Missing dependency 'requests'. Add it to requirements.txt: pip install requests")
-    st.stop()
+    print("Missing dependency 'requests'. Add it to requirements.txt: pip install requests")
+    sys.exit(1)
 
 pd.options.mode.chained_assignment = None
 
-st.set_page_config(page_title="Gold Quant Terminal", layout="wide")
-st.title("Gold (XAUUSD) Institutional Quant Data Pipeline")
+OUTPUT_FILE = pathlib.Path(__file__).resolve().parent / "market_data.txt"
 
 # Collects every line that used to go to the terminal via print() so it can
-# be rendered as one block at the end via st.code(), byte-for-byte identical
-# to the original CLI output.
+# be written to market_data.txt as one block, byte-for-byte identical to the
+# original CLI output.
 _output_lines = []
 
 
 def emit(line=""):
     _output_lines.append(line)
 
-
-# Live network/fetch diagnostics (retries, cooldowns, schema warnings) are
-# noisy and only useful while the pipeline is running, so they go to their
-# own collapsible log instead of cluttering the final report.
-_log_panel = st.expander("Network / fetch log", expanded=False)
-
-
-def log_info(msg):
-    _log_panel.info(msg)
-
-
-def log_warn(msg):
-    _log_panel.warning(msg)
-
-
-def log_error(msg):
-    _log_panel.error(msg)
 
 # ============================================================================
 # CONFIG
@@ -136,7 +123,7 @@ def _throttle_before_request():
     now = time.time()
     if now < _net_state["cooldown_until"]:
         wait = _net_state["cooldown_until"] - now
-        log_info(f"Rate-limit cooldown active -- waiting {wait:.0f}s before next request...")
+        print(f"[INFO] Rate-limit cooldown active -- waiting {wait:.0f}s before next request...")
         time.sleep(wait)
     else:
         time.sleep(FETCH_PACING_SEC)
@@ -160,12 +147,12 @@ def retry_call(func, *args, attempts=RETRY_ATTEMPTS, label="operation", **kwargs
             return result
         except Exception as e:
             last_err = e
-            log_warn(f"{label}: attempt {i}/{attempts} failed -> {e}")
+            print(f"[WARN] {label}: attempt {i}/{attempts} failed -> {e}")
             if _is_rate_limit_error(e):
                 _net_state["cooldown_until"] = time.time() + RATE_LIMIT_COOLDOWN_SEC
             elif i < attempts:
                 time.sleep(RETRY_BASE_DELAY_SEC * (2 ** (i - 1)))
-    log_error(f"{label}: all {attempts} attempts failed -> {last_err}")
+    print(f"[ERROR] {label}: all {attempts} attempts failed -> {last_err}")
     return None
 
 
@@ -314,7 +301,7 @@ def parse_cot_gold(raw_text):
     try:
         df = pd.read_csv(io.StringIO(raw_text), engine="python")
     except Exception as e:
-        log_error(f"CFTC text failed CSV parse: {e}")
+        print(f"[ERROR] CFTC text failed CSV parse: {e}")
         return None
 
     df.columns = [str(c).strip().strip('"') for c in df.columns]
@@ -325,7 +312,7 @@ def parse_cot_gold(raw_text):
     mm_short_col = _first_present(df.columns, COT_MM_SHORT_CANDIDATES)
 
     if not name_col or not mm_long_col or not mm_short_col:
-        log_warn("CFTC schema drift detected -- required columns not found, skipping COT block.")
+        print("[WARN] CFTC schema drift detected -- required columns not found, skipping COT block.")
         return None
 
     names = df[name_col].astype(str)
@@ -334,7 +321,7 @@ def parse_cot_gold(raw_text):
     if gold_df.empty:
         gold_df = df[names.str.contains("GOLD", case=False, na=False)]
     if gold_df.empty:
-        log_warn("No GOLD rows located in CFTC report.")
+        print("[WARN] No GOLD rows located in CFTC report.")
         return None
 
     if date_col:
@@ -556,19 +543,14 @@ def build_summary_rows(gold_macro, gold_struct, gold_intra_q, silver_intra,
 # DATA FETCH ORCHESTRATION
 # ============================================================================
 
-# Streamlit reruns this whole script top-to-bottom on every page load and
-# every widget interaction. Without caching, that means a fresh round of
-# Yahoo/CFTC requests every single rerun -- which is what was tripping the
-# 429s. @st.cache_data memoizes the return value for `ttl` seconds (15 min
-# here), so within that window a rerun reuses the cached DataFrames/dict
-# instead of hitting the network again. An explicit pause between each
-# ticker request additionally spreads out the requests that DO happen on a
-# cache miss, on top of the existing per-attempt pacing/backoff inside
-# retry_call().
+# An explicit pause between each ticker request spreads out the requests
+# this run makes, on top of the existing per-attempt pacing/backoff inside
+# retry_call() -- this script is meant to be run infrequently (e.g. once
+# per scheduled run), not on every page load, so there's no cache to manage
+# here; app.py never calls this at all, it just reads the file this writes.
 TICKER_FETCH_DELAY_SEC = 2
 
 
-@st.cache_data(ttl=900, show_spinner="Fetching market data...")
 def fetch_all_market_data():
     gold_macro = download_yf(**TICKERS["GOLD_MACRO"])
     time.sleep(TICKER_FETCH_DELAY_SEC)
@@ -642,12 +624,16 @@ def main():
     emit("=" * 80)
 
     output_string = "\n".join(_output_lines)
-    st.code(output_string, language="csv")
+    OUTPUT_FILE.write_text(output_string, encoding="utf-8")
+    print(f"[INFO] Wrote {len(output_string)} chars to {OUTPUT_FILE}")
 
 
 if __name__ == "__main__":
     try:
         main()
-    except Exception as e:
-        st.error("Unhandled exception in pipeline:")
-        st.exception(e)
+    except Exception:
+        print("-" * 80)
+        print("[FATAL] Unhandled exception in pipeline:")
+        traceback.print_exc()
+        print("-" * 80)
+        sys.exit(1)
