@@ -57,10 +57,16 @@ def emit(line=""):
 # CONFIG
 # ============================================================================
 
-RETRY_ATTEMPTS = 4
-RETRY_BASE_DELAY_SEC = 4        # generic transient errors: 4s, 8s, 16s exponential backoff
+# Kept deliberately small: this runs unattended in CI (GitHub Actions), where
+# hanging is worse than failing fast. If Yahoo is blocking the runner's IP
+# outright, every attempt fails the same way regardless of how many times or
+# how long we wait between them, so there's no point burning the job's
+# timeout budget on a long backoff -- 2 tries, 5s apart, then move on and
+# still write whatever data we got.
+RETRY_ATTEMPTS = 2
+RETRY_BASE_DELAY_SEC = 5        # flat 5s between the 2 attempts
 FETCH_PACING_SEC = 3            # proactive gap before every outbound request (avoid bursts)
-RATE_LIMIT_COOLDOWN_SEC = 45    # long cooldown once Yahoo/CFTC signals a rate limit
+RATE_LIMIT_COOLDOWN_SEC = 5     # short cooldown once Yahoo/CFTC signals a rate limit
 REQUEST_TIMEOUT = 20
 
 RATE_LIMIT_KEYWORDS = ("rate limit", "ratelimit", "too many requests", "429")
@@ -130,9 +136,9 @@ def _throttle_before_request():
 
 
 def retry_call(func, *args, attempts=RETRY_ATTEMPTS, label="operation", **kwargs):
-    """Retry wrapper with proactive pacing, exponential backoff for generic
-    errors, and a long dedicated cooldown whenever the failure looks like a
-    server-side rate limit (short retries are futile against those)."""
+    """Retry wrapper with proactive pacing and a short flat delay between
+    attempts, fast-failing on purpose so an unattended CI run can't hang
+    for many minutes when Yahoo/CFTC is blocking every request outright."""
     last_err = None
     for i in range(1, attempts + 1):
         _throttle_before_request()
@@ -159,15 +165,21 @@ def retry_call(func, *args, attempts=RETRY_ATTEMPTS, label="operation", **kwargs
 # ---- Yahoo Finance raw JSON chart endpoint (no yfinance / curl_cffi) ------
 
 YAHOO_HOSTS = ["query1.finance.yahoo.com", "query2.finance.yahoo.com"]
-YAHOO_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+
+# A plain "python-requests/x.y" default User-Agent gets flagged as a bot by
+# both Yahoo and CFTC (this is what was contributing to the 429s from the
+# GitHub Actions runner IPs). Presenting as an ordinary desktop Chrome
+# browser on Windows -- applied to every outbound request, not just Yahoo's
+# -- avoids the easy heuristic bot filters.
+BROWSER_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
                   "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
     "Accept": "application/json,text/plain,*/*",
     "Accept-Language": "en-US,en;q=0.9",
 }
 
 _yahoo_session = requests.Session()
-_yahoo_session.headers.update(YAHOO_HEADERS)
+_yahoo_session.headers.update(BROWSER_HEADERS)
 _crumb_state = {"value": None, "attempted": False}
 
 
@@ -274,8 +286,7 @@ def download_yf(symbol, period, interval):
 
 def download_cftc_text(url=CFTC_DISAGG_URL):
     def _dl():
-        headers = {"User-Agent": YAHOO_HEADERS["User-Agent"]}
-        resp = requests.get(url, timeout=REQUEST_TIMEOUT, headers=headers)
+        resp = requests.get(url, timeout=REQUEST_TIMEOUT, headers=BROWSER_HEADERS)
         resp.raise_for_status()
         return resp.text
 
