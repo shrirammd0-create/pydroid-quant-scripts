@@ -86,6 +86,9 @@ TICKERS = {
     "DXY_INTRADAY":    {"symbol": "DX-Y.NYB",  "period": "3d",  "interval": "15m"},
     "GVZ_INTRADAY":    {"symbol": "^GVZ",      "period": "3d",  "interval": "15m"},
     "TNX_MACRO":       {"symbol": "^TNX",      "period": "1mo", "interval": "1d"},
+    "AUD_INTRADAY":    {"symbol": "AUDUSD=X",  "period": "3d",  "interval": "15m"},
+    "JPY_INTRADAY":    {"symbol": "JPY=X",     "period": "3d",  "interval": "15m"},
+    "EUR_INTRADAY":    {"symbol": "EURUSD=X",  "period": "3d",  "interval": "15m"},
 }
 
 # Yahoo's chart endpoint is queried with explicit period1/period2 (unix epoch)
@@ -444,8 +447,9 @@ def compute_gold_silver_ratio(gold_df, silver_df):
     return merged
 
 
-def compute_daily_pivots(daily_df):
-    """Standard floor pivots (PP, R1, S1) from the last fully completed daily candle."""
+def compute_daily_pivots(daily_df, atr_period=14):
+    """Standard floor pivots (PP, R1, R2, S1, S2) from the last fully completed
+    daily candle, plus a rolling ATR(14) computed on the same daily series."""
     if daily_df is None or daily_df.empty or len(daily_df) < 2:
         return None
 
@@ -458,11 +462,17 @@ def compute_daily_pivots(daily_df):
 
     H, L, C = float(basis_row["High"]), float(basis_row["Low"]), float(basis_row["Close"])
     pp = (H + L + C) / 3.0
+    day_range = H - L
     r1 = 2 * pp - L
     s1 = 2 * pp - H
+    r2 = pp + day_range
+    s2 = pp - day_range
+
+    atr_series = true_range(df).rolling(atr_period).mean().dropna()
+    atr14 = float(atr_series.iloc[-1]) if not atr_series.empty else np.nan
 
     return {"date": basis_row.name.date().isoformat(), "High": H, "Low": L, "Close": C,
-            "PP": pp, "R1": r1, "S1": s1}
+            "PP": pp, "R1": r1, "R2": r2, "S1": s1, "S2": s2, "ATR14": atr14}
 
 
 # ============================================================================
@@ -507,7 +517,8 @@ def print_csv_section(title, df, tail=None):
 
 
 def build_summary_rows(gold_macro, gold_struct, gold_intra_q, silver_intra,
-                        gsr_df, dxy_intra_q, gvz_intra, tnx_macro, pivots, cot_data):
+                        gsr_df, dxy_intra_q, gvz_intra, tnx_macro,
+                        aud_intra, jpy_intra, eur_intra, pivots, cot_data):
     rows = [
         ("Gold_Macro_Last_Daily_Close", safe_num(last_val(gold_macro, "Close"), 2)),
         ("Gold_Struct_Last_Hourly_Close", safe_num(last_val(gold_struct, "Close"), 2)),
@@ -522,17 +533,29 @@ def build_summary_rows(gold_macro, gold_struct, gold_intra_q, silver_intra,
         ("DXY_ROC_45m_pct", safe_num(last_val(dxy_intra_q, "ROC_45m_pct"), 4)),
         ("GVZ_Implied_Vol_Last", safe_num(last_val(gvz_intra, "Close"), 2)),
         ("TNX_10Y_Yield_Last_pct", safe_num(last_val(tnx_macro, "Close"), 3)),
+        ("AUDUSD_Last_15m_Close", safe_num(last_val(aud_intra, "Close"), 5)),
+        ("USDJPY_Last_15m_Close", safe_num(last_val(jpy_intra, "Close"), 3)),
+        ("EURUSD_Last_15m_Close", safe_num(last_val(eur_intra, "Close"), 5)),
     ]
 
     if pivots:
         rows += [
             ("Pivot_Basis_Date", pivots["date"]),
+            ("Pivot_Basis_High", safe_num(pivots["High"], 2)),
+            ("Pivot_Basis_Low", safe_num(pivots["Low"], 2)),
             ("Pivot_PP", safe_num(pivots["PP"], 2)),
             ("Pivot_R1", safe_num(pivots["R1"], 2)),
+            ("Pivot_R2", safe_num(pivots["R2"], 2)),
             ("Pivot_S1", safe_num(pivots["S1"], 2)),
+            ("Pivot_S2", safe_num(pivots["S2"], 2)),
+            ("Daily_ATR14", safe_num(pivots["ATR14"], 2)),
         ]
     else:
-        rows += [("Pivot_Basis_Date", "NA"), ("Pivot_PP", "NA"), ("Pivot_R1", "NA"), ("Pivot_S1", "NA")]
+        rows += [
+            ("Pivot_Basis_Date", "NA"), ("Pivot_Basis_High", "NA"), ("Pivot_Basis_Low", "NA"),
+            ("Pivot_PP", "NA"), ("Pivot_R1", "NA"), ("Pivot_R2", "NA"),
+            ("Pivot_S1", "NA"), ("Pivot_S2", "NA"), ("Daily_ATR14", "NA"),
+        ]
 
     if cot_data:
         rows += [
@@ -579,11 +602,18 @@ def fetch_all_market_data():
     time.sleep(TICKER_FETCH_DELAY_SEC)
     tnx_macro = download_yf(**TICKERS["TNX_MACRO"])
     time.sleep(TICKER_FETCH_DELAY_SEC)
+    aud_intra = download_yf(**TICKERS["AUD_INTRADAY"])
+    time.sleep(TICKER_FETCH_DELAY_SEC)
+    jpy_intra = download_yf(**TICKERS["JPY_INTRADAY"])
+    time.sleep(TICKER_FETCH_DELAY_SEC)
+    eur_intra = download_yf(**TICKERS["EUR_INTRADAY"])
+    time.sleep(TICKER_FETCH_DELAY_SEC)
 
     cot_text = download_cftc_text()
     cot_data = parse_cot_gold(cot_text)
 
-    return gold_macro, gold_struct, gold_intra, silver_intra, dxy_intra, gvz_intra, tnx_macro, cot_data
+    return (gold_macro, gold_struct, gold_intra, silver_intra, dxy_intra, gvz_intra, tnx_macro,
+            aud_intra, jpy_intra, eur_intra, cot_data)
 
 
 # ============================================================================
@@ -596,9 +626,9 @@ def main():
     emit(f"Generated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')} UTC  |  Yahoo raw-JSON (no yfinance)")
     emit("=" * 80)
 
-    # ---- 1. Fetch phase (cached 15 min; each call retries up to RETRY_ATTEMPTS times) ----
-    (gold_macro, gold_struct, gold_intra, silver_intra,
-     dxy_intra, gvz_intra, tnx_macro, cot_data) = fetch_all_market_data()
+    # ---- 1. Fetch phase (each call retries up to RETRY_ATTEMPTS times) ----
+    (gold_macro, gold_struct, gold_intra, silver_intra, dxy_intra, gvz_intra, tnx_macro,
+     aud_intra, jpy_intra, eur_intra, cot_data) = fetch_all_market_data()
 
     # ---- 2. Quant engine (vectorized) ----
     gold_intra_q = compute_intraday_quant_engine(gold_intra)
@@ -609,7 +639,8 @@ def main():
     # ---- 3. Report ----
     summary_rows = build_summary_rows(
         gold_macro, gold_struct, gold_intra_q, silver_intra,
-        gsr_df, dxy_intra_q, gvz_intra, tnx_macro, pivots, cot_data,
+        gsr_df, dxy_intra_q, gvz_intra, tnx_macro,
+        aud_intra, jpy_intra, eur_intra, pivots, cot_data,
     )
 
     emit("-" * 80)
@@ -631,6 +662,9 @@ def main():
     print_csv_section("7] US DOLLAR INDEX (DXY) - 3D / 15M + 45M ROC (tail)", dxy_intra_q, tail=TAIL_15M)
     print_csv_section("8] GOLD VIX (GVZ) IMPLIED VOL - 3D / 15M (tail)", gvz_intra, tail=TAIL_15M)
     print_csv_section("9] US 10Y TREASURY YIELD (TNX) - 1MO / 1D (tail)", tnx_macro, tail=TAIL_DAILY)
+    print_csv_section("10] AUD/USD - 3D / 15M (tail)", aud_intra, tail=TAIL_15M)
+    print_csv_section("11] USD/JPY - 3D / 15M (tail)", jpy_intra, tail=TAIL_15M)
+    print_csv_section("12] EUR/USD - 3D / 15M (tail)", eur_intra, tail=TAIL_15M)
 
     emit("=" * 80)
     emit("END OF OUTPUT -- LONG-PRESS ABOVE, SELECT ALL, COPY")
