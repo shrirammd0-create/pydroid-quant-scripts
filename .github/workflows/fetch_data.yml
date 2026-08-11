@@ -29,14 +29,26 @@ jobs:
           python-version: "3.11"
           cache: "pip"
 
+      # pandas-ta is deliberately NOT installed: its current releases require
+      # Python >= 3.12 and no 3.11-compatible build remains on PyPI, so
+      # installing it here would fail the job. ATR is computed natively with
+      # pandas inside gold_terminal.py instead.
       - name: Install dependencies
-        run: pip install requests pandas numpy
+        run: pip install requests pandas numpy beautifulsoup4
+
+      # cot_reports occasionally fails to build from sdist depending on the
+      # setuptools on the runner. It is optional: gold_terminal.py falls back
+      # to the CFTC disagg text feed when the import is missing, so a build
+      # failure here must not kill the whole data pipeline.
+      - name: Install cot_reports (optional, non-fatal)
+        continue-on-error: true
+        run: pip install cot_reports
 
       - name: Run data fetch pipeline
         run: python gold_terminal.py
 
-      - name: Commit and push market_data.txt
+      - name: Commit and push data files
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Auto-update market_data.txt [skip ci]"
-          file_pattern: market_data.txt
+          commit_message: "Auto-update market data [skip ci]"
+          file_pattern: "market_data.txt data.json"
