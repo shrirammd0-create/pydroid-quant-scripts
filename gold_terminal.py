@@ -58,15 +58,17 @@ def emit(line=""):
 # ============================================================================
 
 # Kept deliberately small: this runs unattended in CI (GitHub Actions), where
-# hanging is worse than failing fast. If Yahoo is blocking the runner's IP
-# outright, every attempt fails the same way regardless of how many times or
-# how long we wait between them, so there's no point burning the job's
-# timeout budget on a long backoff -- 2 tries, 5s apart, then move on and
-# still write whatever data we got.
-RETRY_ATTEMPTS = 2
-RETRY_BASE_DELAY_SEC = 5        # flat 5s between the 2 attempts
+# hanging is worse than failing fast. RETRY_BASE_DELAY_SEC backs off
+# exponentially (5s, 10s) for ordinary transient errors; RATE_LIMIT_COOLDOWN_SEC
+# stays flat and short on purpose -- if Yahoo is blocking the runner's IP
+# outright, every attempt fails the same way regardless of how long we wait,
+# and that cooldown is shared across ALL subsequent requests (not just this
+# ticker's), so letting it grow would compound across every ticker and blow
+# past the job's timeout budget. 3 tries, then move on with whatever data we got.
+RETRY_ATTEMPTS = 3
+RETRY_BASE_DELAY_SEC = 5        # exponential for generic errors: 5s, 10s
 FETCH_PACING_SEC = 3            # proactive gap before every outbound request (avoid bursts)
-RATE_LIMIT_COOLDOWN_SEC = 5     # short cooldown once Yahoo/CFTC signals a rate limit
+RATE_LIMIT_COOLDOWN_SEC = 5     # short flat cooldown once Yahoo/CFTC signals a rate limit
 REQUEST_TIMEOUT = 20
 
 RATE_LIMIT_KEYWORDS = ("rate limit", "ratelimit", "too many requests", "429")

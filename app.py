@@ -19,7 +19,9 @@ DATA_FILE = pathlib.Path(__file__).resolve().parent / "market_data.txt"
 
 if DATA_FILE.exists():
     file_contents = DATA_FILE.read_text(encoding="utf-8")
+    st.code(file_contents, language="csv")
 else:
-    file_contents = f"{DATA_FILE.name} not found -- run gold_terminal.py first to generate it."
-
-st.code(file_contents, language="csv")
+    st.warning(
+        f"{DATA_FILE.name} not found yet. Trigger the 'Fetch Gold Market Data' "
+        "GitHub Action (Actions tab -> Run workflow) to generate it, then refresh this page."
+    )
