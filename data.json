@@ -1,28 +1,28 @@
 {
-  "generated_utc": "2026-08-11 11:50:28",
+  "generated_utc": "2026-08-11 13:01:53",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4443.2,
+      "last_close": 4454.2,
       "atr14": 76.46,
       "vwap": 4451.45,
-      "volume_z": -1.839,
+      "volume_z": -1.458,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 65.335,
+      "last_close": 65.13,
       "atr14": 1.582,
-      "vwap": 65.46,
-      "volume_z": -1.577,
+      "vwap": 65.43,
+      "volume_z": -1.397,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 99.834,
+      "last_close": 99.829,
       "atr14": 0.493,
       "vwap": "NA",
       "volume_z": "NA",
@@ -40,7 +40,7 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.70626,
+      "last_close": 0.70686,
       "atr14": 0.00496,
       "vwap": "NA",
       "volume_z": "NA",
@@ -49,7 +49,7 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.15393,
+      "last_close": 1.15473,
       "atr14": 0.00513,
       "vwap": "NA",
       "volume_z": "NA",
@@ -58,7 +58,7 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 159.235,
+      "last_close": 159.208,
       "atr14": 1.769,
       "vwap": "NA",
       "volume_z": "NA",
@@ -78,6 +78,13 @@
   },
   "smc": {
     "fvgs": [
+      {
+        "time": "2026-08-11 02:45",
+        "direction": "Bearish",
+        "zone_low": 4479.3,
+        "zone_high": 4486.0,
+        "status": "OPEN"
+      },
       {
         "time": "2026-08-11 05:15",
         "direction": "Bearish",
@@ -103,13 +110,6 @@
         "time": "2026-08-11 11:15",
         "direction": "Bullish",
         "zone_low": 4441.2,
-        "zone_high": 4443.6,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-08-11 11:40",
-        "direction": "Bearish",
-        "zone_low": 4443.2,
         "zone_high": 4443.6,
         "status": "OPEN"
       }
