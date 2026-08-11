@@ -1,29 +1,29 @@
 {
-  "generated_utc": "2026-08-11 07:55:18",
+  "generated_utc": "2026-08-11 08:53:59",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4417.2,
+      "last_close": 4433.6,
       "atr14": 76.46,
-      "vwap": 4458.15,
-      "volume_z": -1.276,
+      "vwap": 4454.95,
+      "volume_z": -1.601,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 64.565,
+      "last_close": 65.015,
       "atr14": 1.582,
-      "vwap": 65.58,
-      "volume_z": -0.939,
+      "vwap": 65.52,
+      "volume_z": -1.143,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 99.882,
-      "atr14": 0.492,
+      "last_close": 99.844,
+      "atr14": 0.493,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -40,7 +40,7 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.70502,
+      "last_close": 0.70547,
       "atr14": 0.00491,
       "vwap": "NA",
       "volume_z": "NA",
@@ -49,8 +49,8 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.1538,
-      "atr14": 0.00511,
+      "last_close": 1.15393,
+      "atr14": 0.00513,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -58,8 +58,8 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 159.32,
-      "atr14": 1.762,
+      "last_close": 159.34,
+      "atr14": 1.767,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -78,13 +78,6 @@
   },
   "smc": {
     "fvgs": [
-      {
-        "time": "2026-08-11 02:45",
-        "direction": "Bearish",
-        "zone_low": 4479.3,
-        "zone_high": 4486.0,
-        "status": "OPEN"
-      },
       {
         "time": "2026-08-11 05:15",
         "direction": "Bearish",
@@ -107,10 +100,17 @@
         "status": "OPEN"
       },
       {
-        "time": "2026-08-11 06:30",
-        "direction": "Bearish",
-        "zone_low": 4428.6,
-        "zone_high": 4431.3,
+        "time": "2026-08-11 08:30",
+        "direction": "Bullish",
+        "zone_low": 4426.5,
+        "zone_high": 4427.4,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-08-11 08:44",
+        "direction": "Bullish",
+        "zone_low": 4428.4,
+        "zone_high": 4433.6,
         "status": "OPEN"
       }
     ],
