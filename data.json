@@ -1,29 +1,29 @@
 {
-  "generated_utc": "2026-08-12 20:42:08",
+  "generated_utc": "2026-08-12 21:29:07",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4467.5,
+      "last_close": 4469.0,
       "atr14": 71.67,
       "vwap": 4472.9,
-      "volume_z": -1.237,
+      "volume_z": -1.19,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 65.435,
+      "last_close": 65.53,
       "atr14": 1.447,
       "vwap": 66.0,
-      "volume_z": -0.897,
+      "volume_z": -0.833,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 99.994,
-      "atr14": 0.479,
+      "last_close": 99.985,
+      "atr14": 0.467,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -32,7 +32,7 @@
       "label": "Gold VIX",
       "decimals": 2,
       "last_close": 25.58,
-      "atr14": 1.73,
+      "atr14": 1.58,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -40,7 +40,7 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.70646,
+      "last_close": 0.70631,
       "atr14": 0.0051,
       "vwap": "NA",
       "volume_z": "NA",
@@ -58,7 +58,7 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 159.426,
+      "last_close": 159.396,
       "atr14": 1.797,
       "vwap": "NA",
       "volume_z": "NA",
@@ -107,9 +107,9 @@
         "status": "OPEN"
       },
       {
-        "time": "2026-08-12 20:30",
-        "direction": "Bearish",
-        "zone_low": 4467.9,
+        "time": "2026-08-12 20:59",
+        "direction": "Bullish",
+        "zone_low": 4468.8,
         "zone_high": 4469.0,
         "status": "OPEN"
       }
