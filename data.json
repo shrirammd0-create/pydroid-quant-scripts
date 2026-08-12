@@ -1,29 +1,29 @@
 {
-  "generated_utc": "2026-08-12 00:01:14",
+  "generated_utc": "2026-08-12 02:44:14",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4428.2,
-      "atr14": 72.37,
-      "vwap": 4446.49,
-      "volume_z": -0.944,
+      "last_close": 4458.3,
+      "atr14": 70.12,
+      "vwap": 4450.01,
+      "volume_z": -1.692,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 64.93,
-      "atr14": 1.445,
-      "vwap": 65.23,
-      "volume_z": -0.805,
+      "last_close": 65.23,
+      "atr14": 1.35,
+      "vwap": 65.2,
+      "volume_z": -1.235,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 99.81,
-      "atr14": 0.481,
+      "last_close": 99.852,
+      "atr14": 0.456,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -40,8 +40,8 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.70666,
-      "atr14": 0.00471,
+      "last_close": 0.70616,
+      "atr14": 0.00479,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -49,8 +49,8 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.1546,
-      "atr14": 0.00477,
+      "last_close": 1.1542,
+      "atr14": 0.00485,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -58,66 +58,56 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 159.224,
-      "atr14": 1.691,
+      "last_close": 159.4,
+      "atr14": 1.711,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
     }
   },
-  "pivots": {
-    "basis_date": "2026-08-11",
-    "prev_high": 4437.8,
-    "prev_low": 4421.4,
-    "prev_close": 4428.2,
-    "PP": 4429.13,
-    "R1": 4436.87,
-    "R2": 4445.53,
-    "S1": 4420.47,
-    "S2": 4412.73
-  },
+  "pivots": null,
   "smc": {
     "fvgs": [
       {
-        "time": "2026-08-11 17:45",
-        "direction": "Bearish",
-        "zone_low": 4437.1,
-        "zone_high": 4438.3,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-08-11 18:00",
-        "direction": "Bearish",
-        "zone_low": 4428.7,
-        "zone_high": 4433.9,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-08-11 18:15",
-        "direction": "Bearish",
-        "zone_low": 4426.5,
-        "zone_high": 4428.2,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-08-11 18:45",
+        "time": "2026-08-12 00:15",
         "direction": "Bullish",
-        "zone_low": 4426.5,
-        "zone_high": 4428.9,
+        "zone_low": 4431.0,
+        "zone_high": 4433.2,
         "status": "OPEN"
       },
       {
-        "time": "2026-08-11 23:00",
+        "time": "2026-08-12 01:15",
+        "direction": "Bullish",
+        "zone_low": 4442.5,
+        "zone_high": 4446.2,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-08-12 02:00",
+        "direction": "Bullish",
+        "zone_low": 4452.9,
+        "zone_high": 4453.9,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-08-12 02:15",
+        "direction": "Bullish",
+        "zone_low": 4456.9,
+        "zone_high": 4458.5,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-08-12 02:34",
         "direction": "Bearish",
-        "zone_low": 4428.7,
-        "zone_high": 4433.5,
+        "zone_low": 4458.3,
+        "zone_high": 4458.5,
         "status": "OPEN"
       }
     ],
     "sweep": {
       "swept_pdh": false,
       "swept_pdl": false,
-      "detail": "No sweep on current candle"
+      "detail": "Insufficient data"
     }
   },
   "cot": {
@@ -161,8 +151,8 @@
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
-    "atr14": 72.37,
-    "stop_distance_usd": 108.56,
+    "atr14": 70.12,
+    "stop_distance_usd": 105.18,
     "lot_size": 0.0,
     "tradeable": false,
     "status": "UN-TRADEABLE (Exceeds Risk Limit)",
