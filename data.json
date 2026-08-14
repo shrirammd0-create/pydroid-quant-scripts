@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-14 21:09:52",
+  "generated_utc": "2026-08-14 21:40:31",
   "assets": {
     "GC=F": {
       "label": "Gold",
@@ -7,7 +7,7 @@
       "last_close": 4432.0,
       "atr14": 75.64,
       "vwap": 4418.19,
-      "volume_z": -1.407,
+      "volume_z": -1.406,
       "body_ratio": "NA"
     },
     "SI=F": {
@@ -16,7 +16,7 @@
       "last_close": 64.825,
       "atr14": 1.564,
       "vwap": 64.9,
-      "volume_z": -1.265,
+      "volume_z": -1.277,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
@@ -41,7 +41,7 @@
       "label": "AUD/USD",
       "decimals": 5,
       "last_close": 0.70867,
-      "atr14": 0.00503,
+      "atr14": 0.00502,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
