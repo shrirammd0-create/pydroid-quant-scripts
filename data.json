@@ -1,13 +1,13 @@
 {
-  "generated_utc": "2026-08-14 20:45:06",
+  "generated_utc": "2026-08-14 21:09:52",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4429.1,
+      "last_close": 4432.0,
       "atr14": 75.64,
-      "vwap": 4418.14,
-      "volume_z": -1.468,
+      "vwap": 4418.19,
+      "volume_z": -1.407,
       "body_ratio": "NA"
     },
     "SI=F": {
@@ -16,13 +16,13 @@
       "last_close": 64.825,
       "atr14": 1.564,
       "vwap": 64.9,
-      "volume_z": -1.227,
+      "volume_z": -1.265,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 99.646,
+      "last_close": 99.636,
       "atr14": 0.484,
       "vwap": "NA",
       "volume_z": "NA",
@@ -40,7 +40,7 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.70852,
+      "last_close": 0.70867,
       "atr14": 0.00503,
       "vwap": "NA",
       "volume_z": "NA",
@@ -49,7 +49,7 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.15714,
+      "last_close": 1.15727,
       "atr14": 0.0053,
       "vwap": "NA",
       "volume_z": "NA",
@@ -58,7 +58,7 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 159.312,
+      "last_close": 159.305,
       "atr14": 1.827,
       "vwap": "NA",
       "volume_z": "NA",
@@ -78,13 +78,6 @@
   },
   "smc": {
     "fvgs": [
-      {
-        "time": "2026-08-14 07:45",
-        "direction": "Bullish",
-        "zone_low": 4392.4,
-        "zone_high": 4395.5,
-        "status": "OPEN"
-      },
       {
         "time": "2026-08-14 08:00",
         "direction": "Bullish",
@@ -111,6 +104,13 @@
         "direction": "Bullish",
         "zone_low": 4420.0,
         "zone_high": 4421.8,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-08-14 20:45",
+        "direction": "Bullish",
+        "zone_low": 4430.2,
+        "zone_high": 4430.4,
         "status": "OPEN"
       }
     ],
