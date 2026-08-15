@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-14 23:52:06",
+  "generated_utc": "2026-08-15 01:09:28",
   "assets": {
     "GC=F": {
       "label": "Gold",
@@ -41,7 +41,7 @@
       "label": "AUD/USD",
       "decimals": 5,
       "last_close": "NA",
-      "atr14": 0.00502,
+      "atr14": 0.00503,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -59,22 +59,22 @@
       "label": "USD/JPY",
       "decimals": 3,
       "last_close": "NA",
-      "atr14": 1.832,
+      "atr14": 1.827,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
     }
   },
   "pivots": {
-    "basis_date": "2026-08-13",
-    "prev_high": 4445.0,
-    "prev_low": 4350.0,
-    "prev_close": 4363.6,
-    "PP": 4386.2,
-    "R1": 4422.4,
-    "R2": 4481.2,
-    "S1": 4327.4,
-    "S2": 4291.2
+    "basis_date": "2026-08-14",
+    "prev_high": 4454.6,
+    "prev_low": 4365.5,
+    "prev_close": 4432.0,
+    "PP": 4417.37,
+    "R1": 4469.23,
+    "R2": 4506.47,
+    "S1": 4380.13,
+    "S2": 4328.27
   },
   "smc": {
     "fvgs": [
@@ -142,7 +142,7 @@
   "alert": {
     "active": false,
     "conditions": {
-      "close_above_r1": true,
+      "close_above_r1": false,
       "volume_z_above_1_5": false,
       "body_ratio_above_0_70": false,
       "passes_risk_limit": false
