@@ -1,6 +1,6 @@
 ================================================================================
 XAUUSD QUANT DATA & ALERTING PIPELINE
-Generated: 2026-08-16 20:20:04 UTC  |  Yahoo raw-JSON (no yfinance)
+Generated: 2026-08-16 20:47:11 UTC  |  Yahoo raw-JSON (no yfinance)
 ================================================================================
 --------------------------------------------------------------------------------
 [1] MARKET SNAPSHOT SUMMARY (CSV)
@@ -17,9 +17,9 @@ Gold_VIX_Daily_ATR14,1.79
 AUDUSD_Last_15m_Close,NA
 AUDUSD_Daily_ATR14,0.00496
 EURUSD_Last_15m_Close,NA
-EURUSD_Daily_ATR14,0.0053
+EURUSD_Daily_ATR14,0.00532
 USDJPY_Last_15m_Close,NA
-USDJPY_Daily_ATR14,1.772
+USDJPY_Daily_ATR14,1.773
 Gold_VWAP,4418.17
 Gold_Volume_Z_20,-1.406
 Gold_Body_Ratio,1.0
