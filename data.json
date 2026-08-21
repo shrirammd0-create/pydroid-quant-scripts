@@ -1,28 +1,28 @@
 {
-  "generated_utc": "2026-08-21 11:24:17",
+  "generated_utc": "2026-08-21 11:52:43",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4646.6,
-      "atr14": 92.21,
-      "vwap": 4616.82,
-      "volume_z": -1.704,
+      "last_close": 4651.4,
+      "atr14": 92.38,
+      "vwap": 4618.98,
+      "volume_z": -1.719,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 69.71,
-      "atr14": 1.901,
-      "vwap": 69.17,
-      "volume_z": -2.176,
+      "last_close": 69.88,
+      "atr14": 1.904,
+      "vwap": 69.25,
+      "volume_z": -1.974,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 98.65,
+      "last_close": 98.676,
       "atr14": 0.375,
       "vwap": "NA",
       "volume_z": "NA",
@@ -41,7 +41,7 @@
       "label": "AUD/USD",
       "decimals": 5,
       "last_close": 0.71654,
-      "atr14": 0.00467,
+      "atr14": 0.00469,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -49,7 +49,7 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.1711,
+      "last_close": 1.17014,
       "atr14": 0.00539,
       "vwap": "NA",
       "volume_z": "NA",
@@ -58,7 +58,7 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 158.625,
+      "last_close": 158.683,
       "atr14": 0.966,
       "vwap": "NA",
       "volume_z": "NA",
@@ -132,8 +132,8 @@
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
-    "atr14": 92.21,
-    "stop_distance_usd": 138.32,
+    "atr14": 92.38,
+    "stop_distance_usd": 138.57,
     "lot_size": 0.0,
     "tradeable": false,
     "status": "UN-TRADEABLE (Exceeds Risk Limit)",
