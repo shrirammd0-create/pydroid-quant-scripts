@@ -1,13 +1,13 @@
 {
-  "generated_utc": "2026-08-21 22:50:47",
+  "generated_utc": "2026-08-21 23:22:03",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
       "last_close": 4661.6,
-      "atr14": 94.42,
-      "vwap": 4640.94,
-      "volume_z": -1.207,
+      "atr14": 94.43,
+      "vwap": 4640.95,
+      "volume_z": -1.208,
       "body_ratio": "NA"
     },
     "SI=F": {
@@ -40,7 +40,7 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.71746,
+      "last_close": "NA",
       "atr14": 0.00478,
       "vwap": "NA",
       "volume_z": "NA",
@@ -49,7 +49,7 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.16781,
+      "last_close": "NA",
       "atr14": 0.00545,
       "vwap": "NA",
       "volume_z": "NA",
@@ -58,7 +58,7 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 158.862,
+      "last_close": 158.94,
       "atr14": 0.965,
       "vwap": "NA",
       "volume_z": "NA",
@@ -132,8 +132,8 @@
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
-    "atr14": 94.42,
-    "stop_distance_usd": 141.63,
+    "atr14": 94.43,
+    "stop_distance_usd": 141.64,
     "lot_size": 0.0,
     "tradeable": false,
     "status": "UN-TRADEABLE (Exceeds Risk Limit)",
