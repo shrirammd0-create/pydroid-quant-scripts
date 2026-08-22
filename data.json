@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-22 13:18:49",
+  "generated_utc": "2026-08-22 13:52:10",
   "assets": {
     "GC=F": {
       "label": "Gold",
@@ -7,7 +7,7 @@
       "last_close": "NA",
       "atr14": 89.69,
       "vwap": "NA",
-      "volume_z": 0.0,
+      "volume_z": "NA",
       "body_ratio": "NA"
     },
     "SI=F": {
