@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-21 23:48:48",
+  "generated_utc": "2026-08-22 01:09:23",
   "assets": {
     "GC=F": {
       "label": "Gold",
@@ -66,15 +66,15 @@
     }
   },
   "pivots": {
-    "basis_date": "2026-08-20",
-    "prev_high": 4530.0,
-    "prev_low": 4486.0,
-    "prev_close": 4516.3,
-    "PP": 4510.77,
-    "R1": 4535.53,
-    "R2": 4554.77,
-    "S1": 4491.53,
-    "S2": 4466.77
+    "basis_date": "2026-08-21",
+    "prev_high": 4690.3,
+    "prev_low": 4565.5,
+    "prev_close": 4661.6,
+    "PP": 4639.13,
+    "R1": 4712.77,
+    "R2": 4763.93,
+    "S1": 4587.97,
+    "S2": 4514.33
   },
   "smc": {
     "fvgs": [
@@ -142,7 +142,7 @@
   "alert": {
     "active": false,
     "conditions": {
-      "close_above_r1": true,
+      "close_above_r1": false,
       "volume_z_above_1_5": false,
       "body_ratio_above_0_70": false,
       "passes_risk_limit": false
