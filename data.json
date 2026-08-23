@@ -1,13 +1,13 @@
 {
-  "generated_utc": "2026-08-23 14:21:38",
+  "generated_utc": "2026-08-23 14:49:28",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
       "last_close": 4680.6,
-      "atr14": 94.43,
-      "vwap": 4640.98,
-      "volume_z": -1.208,
+      "atr14": 94.42,
+      "vwap": 4640.91,
+      "volume_z": -1.187,
       "body_ratio": "NA"
     },
     "SI=F": {
@@ -67,14 +67,14 @@
   },
   "pivots": {
     "basis_date": "2026-08-21",
-    "prev_high": 4690.4,
+    "prev_high": 4690.3,
     "prev_low": 4565.5,
     "prev_close": 4680.6,
-    "PP": 4645.5,
-    "R1": 4725.5,
-    "R2": 4770.4,
-    "S1": 4600.6,
-    "S2": 4520.6
+    "PP": 4645.47,
+    "R1": 4725.43,
+    "R2": 4770.27,
+    "S1": 4600.63,
+    "S2": 4520.67
   },
   "smc": {
     "fvgs": [
@@ -132,8 +132,8 @@
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
-    "atr14": 94.43,
-    "stop_distance_usd": 141.64,
+    "atr14": 94.42,
+    "stop_distance_usd": 141.63,
     "lot_size": 0.0,
     "tradeable": false,
     "status": "UN-TRADEABLE (Exceeds Risk Limit)",
