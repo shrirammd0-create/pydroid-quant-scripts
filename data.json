@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-23 20:49:01",
+  "generated_utc": "2026-08-23 21:20:08",
   "assets": {
     "GC=F": {
       "label": "Gold",
@@ -50,7 +50,7 @@
       "label": "EUR/USD",
       "decimals": 5,
       "last_close": "NA",
-      "atr14": 0.00545,
+      "atr14": 0.00523,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -59,7 +59,7 @@
       "label": "USD/JPY",
       "decimals": 3,
       "last_close": 158.94,
-      "atr14": 0.917,
+      "atr14": 0.922,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
