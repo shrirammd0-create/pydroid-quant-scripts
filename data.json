@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-24 21:27:20",
+  "generated_utc": "2026-08-24 21:54:41",
   "assets": {
     "GC=F": {
       "label": "Gold",
@@ -7,7 +7,7 @@
       "last_close": 4710.0,
       "atr14": 93.46,
       "vwap": 4705.59,
-      "volume_z": -1.117,
+      "volume_z": -1.119,
       "body_ratio": "NA"
     },
     "SI=F": {
@@ -16,13 +16,13 @@
       "last_close": 68.965,
       "atr14": 1.827,
       "vwap": 68.96,
-      "volume_z": -1.07,
+      "volume_z": -1.074,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 98.988,
+      "last_close": 98.984,
       "atr14": 0.381,
       "vwap": "NA",
       "volume_z": "NA",
@@ -40,7 +40,7 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.71536,
+      "last_close": 0.71515,
       "atr14": 0.00446,
       "vwap": "NA",
       "volume_z": "NA",
@@ -49,8 +49,8 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.16686,
-      "atr14": 0.00522,
+      "last_close": 1.16673,
+      "atr14": 0.0051,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -58,8 +58,8 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 159.036,
-      "atr14": 0.965,
+      "last_close": 159.057,
+      "atr14": 0.923,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
