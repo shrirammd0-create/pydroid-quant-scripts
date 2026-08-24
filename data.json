@@ -1,28 +1,28 @@
 {
-  "generated_utc": "2026-08-24 11:55:45",
+  "generated_utc": "2026-08-24 12:49:44",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4719.0,
+      "last_close": 4720.3,
       "atr14": 92.73,
-      "vwap": 4695.63,
-      "volume_z": -1.139,
+      "vwap": 4697.59,
+      "volume_z": -1.315,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 69.3,
+      "last_close": 69.335,
       "atr14": 1.801,
-      "vwap": 68.97,
-      "volume_z": -1.172,
+      "vwap": 69.0,
+      "volume_z": -1.343,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 98.974,
+      "last_close": 98.92,
       "atr14": 0.378,
       "vwap": "NA",
       "volume_z": "NA",
@@ -40,7 +40,7 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.71679,
+      "last_close": 0.71654,
       "atr14": 0.0047,
       "vwap": "NA",
       "volume_z": "NA",
@@ -49,7 +49,7 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.16713,
+      "last_close": 1.16727,
       "atr14": 0.00533,
       "vwap": "NA",
       "volume_z": "NA",
@@ -58,7 +58,7 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 159.055,
+      "last_close": 158.995,
       "atr14": 0.965,
       "vwap": "NA",
       "volume_z": "NA",
@@ -78,6 +78,13 @@
   },
   "smc": {
     "fvgs": [
+      {
+        "time": "2026-08-21 01:15",
+        "direction": "Bullish",
+        "zone_low": 4570.9,
+        "zone_high": 4577.0,
+        "status": "OPEN"
+      },
       {
         "time": "2026-08-21 05:45",
         "direction": "Bullish",
@@ -104,13 +111,6 @@
         "direction": "Bullish",
         "zone_low": 4677.7,
         "zone_high": 4684.4,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-08-24 11:45",
-        "direction": "Bullish",
-        "zone_low": 4705.4,
-        "zone_high": 4715.8,
         "status": "OPEN"
       }
     ],
