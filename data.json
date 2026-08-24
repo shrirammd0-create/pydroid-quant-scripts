@@ -1,22 +1,22 @@
 {
-  "generated_utc": "2026-08-24 23:21:07",
+  "generated_utc": "2026-08-24 23:46:27",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4728.9,
-      "atr14": 92.79,
-      "vwap": 4705.74,
-      "volume_z": -1.011,
+      "last_close": 4729.2,
+      "atr14": 93.11,
+      "vwap": 4705.93,
+      "volume_z": -1.116,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 69.305,
+      "last_close": 69.355,
       "atr14": 1.749,
       "vwap": 68.96,
-      "volume_z": -1.192,
+      "volume_z": -1.12,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
@@ -40,7 +40,7 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.71521,
+      "last_close": 0.71546,
       "atr14": 0.00435,
       "vwap": "NA",
       "volume_z": "NA",
@@ -58,8 +58,8 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 159.085,
-      "atr14": 0.925,
+      "last_close": 159.136,
+      "atr14": 0.927,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -78,6 +78,13 @@
   },
   "smc": {
     "fvgs": [
+      {
+        "time": "2026-08-24 17:00",
+        "direction": "Bearish",
+        "zone_low": 4712.7,
+        "zone_high": 4715.9,
+        "status": "OPEN"
+      },
       {
         "time": "2026-08-24 19:45",
         "direction": "Bullish",
@@ -105,13 +112,6 @@
         "zone_low": 4718.1,
         "zone_high": 4723.0,
         "status": "OPEN"
-      },
-      {
-        "time": "2026-08-24 23:11",
-        "direction": "Bullish",
-        "zone_low": 4725.6,
-        "zone_high": 4728.9,
-        "status": "OPEN"
       }
     ],
     "sweep": {
@@ -132,8 +132,8 @@
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
-    "atr14": 92.79,
-    "stop_distance_usd": 139.18,
+    "atr14": 93.11,
+    "stop_distance_usd": 139.67,
     "lot_size": 0.0,
     "tradeable": false,
     "status": "UN-TRADEABLE (Exceeds Risk Limit)",
