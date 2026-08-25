@@ -1,21 +1,21 @@
 {
-  "generated_utc": "2026-08-25 22:55:41",
+  "generated_utc": "2026-08-25 23:24:55",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4727.5,
-      "atr14": 82.92,
-      "vwap": 4697.76,
-      "volume_z": -1.024,
+      "last_close": 4725.1,
+      "atr14": 83.15,
+      "vwap": 4697.94,
+      "volume_z": -1.058,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 68.985,
-      "atr14": 1.639,
-      "vwap": 68.25,
+      "last_close": 68.975,
+      "atr14": 1.647,
+      "vwap": 68.26,
       "volume_z": -0.762,
       "body_ratio": "NA"
     },
@@ -40,7 +40,7 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.71674,
+      "last_close": 0.71679,
       "atr14": 0.00428,
       "vwap": "NA",
       "volume_z": "NA",
@@ -58,7 +58,7 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 159.193,
+      "last_close": 159.232,
       "atr14": 0.895,
       "vwap": "NA",
       "volume_z": "NA",
@@ -107,9 +107,9 @@
         "status": "OPEN"
       },
       {
-        "time": "2026-08-25 22:45",
-        "direction": "Bullish",
-        "zone_low": 4724.3,
+        "time": "2026-08-25 23:14",
+        "direction": "Bearish",
+        "zone_low": 4725.1,
         "zone_high": 4727.2,
         "status": "OPEN"
       }
@@ -132,8 +132,8 @@
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
-    "atr14": 82.92,
-    "stop_distance_usd": 124.38,
+    "atr14": 83.15,
+    "stop_distance_usd": 124.73,
     "lot_size": 0.0,
     "tradeable": false,
     "status": "UN-TRADEABLE (Exceeds Risk Limit)",
