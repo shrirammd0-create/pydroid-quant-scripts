@@ -1,28 +1,28 @@
 {
-  "generated_utc": "2026-08-26 09:58:03",
+  "generated_utc": "2026-08-26 10:40:43",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4679.8,
+      "last_close": 4670.8,
       "atr14": 79.46,
-      "vwap": 4696.56,
-      "volume_z": -1.92,
+      "vwap": 4695.27,
+      "volume_z": -1.906,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 68.6,
+      "last_close": 68.435,
       "atr14": 1.77,
-      "vwap": 68.92,
-      "volume_z": -1.916,
+      "vwap": 68.91,
+      "volume_z": -1.899,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 98.989,
+      "last_close": 99.019,
       "atr14": 0.362,
       "vwap": "NA",
       "volume_z": "NA",
@@ -40,7 +40,7 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.71839,
+      "last_close": 0.71844,
       "atr14": 0.00423,
       "vwap": "NA",
       "volume_z": "NA",
@@ -49,7 +49,7 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.167,
+      "last_close": 1.16673,
       "atr14": 0.00471,
       "vwap": "NA",
       "volume_z": "NA",
@@ -58,7 +58,7 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 158.992,
+      "last_close": 159.033,
       "atr14": 0.82,
       "vwap": "NA",
       "volume_z": "NA",
@@ -100,10 +100,17 @@
         "status": "OPEN"
       },
       {
-        "time": "2026-08-26 09:48",
-        "direction": "Bullish",
-        "zone_low": 4678.1,
-        "zone_high": 4679.8,
+        "time": "2026-08-26 10:15",
+        "direction": "Bearish",
+        "zone_low": 4676.8,
+        "zone_high": 4677.7,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-08-26 10:30",
+        "direction": "Bearish",
+        "zone_low": 4671.9,
+        "zone_high": 4673.9,
         "status": "OPEN"
       }
     ],
