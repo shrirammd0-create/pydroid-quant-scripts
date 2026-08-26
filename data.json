@@ -1,29 +1,29 @@
 {
-  "generated_utc": "2026-08-26 11:10:57",
+  "generated_utc": "2026-08-26 11:45:23",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4676.6,
+      "last_close": 4674.2,
       "atr14": 79.46,
-      "vwap": 4694.64,
-      "volume_z": -1.879,
+      "vwap": 4693.61,
+      "volume_z": -2.03,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 68.515,
+      "last_close": 68.45,
       "atr14": 1.77,
-      "vwap": 68.89,
-      "volume_z": -2.01,
+      "vwap": 68.86,
+      "volume_z": -2.059,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 99.026,
-      "atr14": 0.363,
+      "last_close": 99.016,
+      "atr14": 0.364,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -40,7 +40,7 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.71829,
+      "last_close": 0.71844,
       "atr14": 0.00423,
       "vwap": "NA",
       "volume_z": "NA",
@@ -58,7 +58,7 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 159.1,
+      "last_close": 159.125,
       "atr14": 0.82,
       "vwap": "NA",
       "volume_z": "NA",
