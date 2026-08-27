@@ -1,29 +1,29 @@
 {
-  "generated_utc": "2026-08-27 03:18:06",
+  "generated_utc": "2026-08-27 14:26:56",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4686.7,
-      "atr14": 73.51,
-      "vwap": 4678.65,
-      "volume_z": -1.934,
+      "last_close": 4632.5,
+      "atr14": 73.54,
+      "vwap": 4652.61,
+      "volume_z": -1.556,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 69.32,
-      "atr14": 1.607,
-      "vwap": 69.12,
-      "volume_z": -1.363,
+      "last_close": 68.975,
+      "atr14": 1.666,
+      "vwap": 68.95,
+      "volume_z": -1.137,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 99.139,
-      "atr14": 0.339,
+      "last_close": 99.134,
+      "atr14": 0.347,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -31,8 +31,8 @@
     "^GVZ": {
       "label": "Gold VIX",
       "decimals": 2,
-      "last_close": 26.96,
-      "atr14": 1.7,
+      "last_close": 26.82,
+      "atr14": 1.61,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -40,8 +40,8 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.71855,
-      "atr14": 0.00398,
+      "last_close": 0.71932,
+      "atr14": 0.00413,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -49,8 +49,8 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.16591,
-      "atr14": 0.00462,
+      "last_close": 1.16523,
+      "atr14": 0.00483,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -58,8 +58,8 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 159.317,
-      "atr14": 0.76,
+      "last_close": 159.357,
+      "atr14": 0.778,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -79,38 +79,38 @@
   "smc": {
     "fvgs": [
       {
-        "time": "2026-08-26 05:45",
+        "time": "2026-08-27 03:45",
         "direction": "Bearish",
-        "zone_low": 4697.3,
-        "zone_high": 4698.4,
+        "zone_low": 4684.4,
+        "zone_high": 4687.4,
         "status": "OPEN"
       },
       {
-        "time": "2026-08-26 22:15",
-        "direction": "Bullish",
-        "zone_low": 4649.7,
-        "zone_high": 4656.2,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-08-27 01:15",
-        "direction": "Bullish",
-        "zone_low": 4665.3,
-        "zone_high": 4671.2,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-08-27 02:30",
+        "time": "2026-08-27 04:00",
         "direction": "Bearish",
-        "zone_low": 4688.4,
-        "zone_high": 4692.6,
+        "zone_low": 4681.1,
+        "zone_high": 4683.4,
         "status": "OPEN"
       },
       {
-        "time": "2026-08-27 03:08",
-        "direction": "Bullish",
-        "zone_low": 4685.9,
-        "zone_high": 4686.7,
+        "time": "2026-08-27 04:30",
+        "direction": "Bearish",
+        "zone_low": 4675.3,
+        "zone_high": 4678.8,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-08-27 05:45",
+        "direction": "Bearish",
+        "zone_low": 4663.9,
+        "zone_high": 4670.8,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-08-27 13:45",
+        "direction": "Bearish",
+        "zone_low": 4635.9,
+        "zone_high": 4636.0,
         "status": "OPEN"
       }
     ],
@@ -132,8 +132,8 @@
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
-    "atr14": 73.51,
-    "stop_distance_usd": 110.27,
+    "atr14": 73.54,
+    "stop_distance_usd": 110.3,
     "lot_size": 0.0,
     "tradeable": false,
     "status": "UN-TRADEABLE (Exceeds Risk Limit)",
