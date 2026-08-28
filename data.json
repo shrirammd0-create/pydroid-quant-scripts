@@ -1,29 +1,29 @@
 {
-  "generated_utc": "2026-08-28 09:42:02",
+  "generated_utc": "2026-08-28 20:59:36",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4657.3,
-      "atr14": 67.54,
-      "vwap": 4642.49,
-      "volume_z": -0.428,
+      "last_close": 4508.9,
+      "atr14": 77.14,
+      "vwap": 4595.63,
+      "volume_z": -0.969,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 71.295,
-      "atr14": 1.654,
-      "vwap": 70.15,
-      "volume_z": -0.465,
+      "last_close": 67.16,
+      "atr14": 1.844,
+      "vwap": 69.61,
+      "volume_z": -0.758,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 99.209,
-      "atr14": 0.337,
+      "last_close": 99.691,
+      "atr14": 0.374,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -31,8 +31,8 @@
     "^GVZ": {
       "label": "Gold VIX",
       "decimals": 2,
-      "last_close": 26.8,
-      "atr14": 1.62,
+      "last_close": 25.17,
+      "atr14": 1.65,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -40,8 +40,8 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.71979,
-      "atr14": 0.00406,
+      "last_close": 0.71644,
+      "atr14": 0.00448,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -49,8 +49,8 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.16442,
-      "atr14": 0.00474,
+      "last_close": 1.15861,
+      "atr14": 0.00563,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -58,8 +58,8 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 159.656,
-      "atr14": 0.697,
+      "last_close": 160.038,
+      "atr14": 0.773,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -79,38 +79,38 @@
   "smc": {
     "fvgs": [
       {
-        "time": "2026-08-27 04:30",
+        "time": "2026-08-28 15:45",
         "direction": "Bearish",
-        "zone_low": 4675.3,
-        "zone_high": 4678.8,
+        "zone_low": 4598.1,
+        "zone_high": 4603.5,
         "status": "OPEN"
       },
       {
-        "time": "2026-08-28 06:15",
-        "direction": "Bullish",
-        "zone_low": 4629.5,
-        "zone_high": 4633.0,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-08-28 06:45",
-        "direction": "Bullish",
-        "zone_low": 4637.8,
-        "zone_high": 4640.7,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-08-28 07:00",
-        "direction": "Bullish",
-        "zone_low": 4640.9,
-        "zone_high": 4648.7,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-08-28 08:45",
+        "time": "2026-08-28 16:00",
         "direction": "Bearish",
-        "zone_low": 4659.9,
-        "zone_high": 4661.3,
+        "zone_low": 4580.9,
+        "zone_high": 4586.5,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-08-28 16:15",
+        "direction": "Bearish",
+        "zone_low": 4555.0,
+        "zone_high": 4574.8,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-08-28 16:30",
+        "direction": "Bearish",
+        "zone_low": 4538.3,
+        "zone_high": 4548.0,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-08-28 20:49",
+        "direction": "Bullish",
+        "zone_low": 4507.5,
+        "zone_high": 4508.9,
         "status": "OPEN"
       }
     ],
@@ -123,10 +123,10 @@
   "cot": {
     "source": "cot_reports legacy_fut (non-commercial)",
     "contract": "GOLD - COMMODITY EXCHANGE INC.",
-    "report_date": "2026-08-18",
-    "long": 256902.0,
-    "short": 34713.0,
-    "net": 222189.0
+    "report_date": "2026-08-25",
+    "long": 277159.0,
+    "short": 33825.0,
+    "net": 243334.0
   },
   "news": [
     {
@@ -161,8 +161,8 @@
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
-    "atr14": 67.54,
-    "stop_distance_usd": 101.3,
+    "atr14": 77.14,
+    "stop_distance_usd": 115.71,
     "lot_size": 0.0,
     "tradeable": false,
     "status": "UN-TRADEABLE (Exceeds Risk Limit)",
@@ -171,7 +171,7 @@
   "alert": {
     "active": false,
     "conditions": {
-      "close_above_r1": true,
+      "close_above_r1": false,
       "volume_z_above_1_5": false,
       "body_ratio_above_0_70": false,
       "passes_risk_limit": false
