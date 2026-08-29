@@ -1,28 +1,28 @@
 {
-  "generated_utc": "2026-08-29 03:08:04",
+  "generated_utc": "2026-08-29 10:03:21",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4504.1,
+      "last_close": "NA",
       "atr14": 77.14,
-      "vwap": 4595.41,
-      "volume_z": -0.985,
+      "vwap": "NA",
+      "volume_z": 0.0,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 67.09,
+      "last_close": "NA",
       "atr14": 1.844,
-      "vwap": 69.61,
-      "volume_z": -0.771,
+      "vwap": "NA",
+      "volume_z": "NA",
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 99.677,
+      "last_close": "NA",
       "atr14": 0.374,
       "vwap": "NA",
       "volume_z": "NA",
@@ -32,7 +32,7 @@
       "label": "Gold VIX",
       "decimals": 2,
       "last_close": 25.17,
-      "atr14": 1.65,
+      "atr14": 3.29,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -41,7 +41,7 @@
       "label": "AUD/USD",
       "decimals": 5,
       "last_close": "NA",
-      "atr14": 0.00444,
+      "atr14": 0.00431,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -65,33 +65,9 @@
       "body_ratio": "NA"
     }
   },
-  "pivots": {
-    "basis_date": "2026-08-28",
-    "prev_high": 4688.0,
-    "prev_low": 4495.5,
-    "prev_close": 4504.1,
-    "PP": 4562.53,
-    "R1": 4629.57,
-    "R2": 4755.03,
-    "S1": 4437.07,
-    "S2": 4370.03
-  },
+  "pivots": null,
   "smc": {
     "fvgs": [
-      {
-        "time": "2026-08-28 14:15",
-        "direction": "Bearish",
-        "zone_low": 4620.5,
-        "zone_high": 4655.2,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-08-28 15:45",
-        "direction": "Bearish",
-        "zone_low": 4598.1,
-        "zone_high": 4603.5,
-        "status": "OPEN"
-      },
       {
         "time": "2026-08-28 16:00",
         "direction": "Bearish",
@@ -112,12 +88,26 @@
         "zone_low": 4538.3,
         "zone_high": 4548.0,
         "status": "OPEN"
+      },
+      {
+        "time": "2026-08-28 18:15",
+        "direction": "Bearish",
+        "zone_low": 4513.5,
+        "zone_high": 4516.7,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-08-28 18:30",
+        "direction": "Bearish",
+        "zone_low": 4508.5,
+        "zone_high": 4509.5,
+        "status": "OPEN"
       }
     ],
     "sweep": {
       "swept_pdh": false,
       "swept_pdl": false,
-      "detail": "No sweep on current candle"
+      "detail": "Insufficient data"
     }
   },
   "cot": {
