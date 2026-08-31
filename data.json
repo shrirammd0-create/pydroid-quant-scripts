@@ -1,29 +1,29 @@
 {
-  "generated_utc": "2026-08-30 22:24:47",
+  "generated_utc": "2026-08-31 00:45:10",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4508.4,
-      "atr14": 74.96,
-      "vwap": 4508.07,
-      "volume_z": -1.278,
+      "last_close": 4513.6,
+      "atr14": 75.36,
+      "vwap": 4509.03,
+      "volume_z": -1.564,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 67.085,
-      "atr14": 1.889,
-      "vwap": 67.03,
-      "volume_z": -0.985,
+      "last_close": 67.39,
+      "atr14": 1.903,
+      "vwap": 67.25,
+      "volume_z": -1.713,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 99.697,
-      "atr14": 0.364,
+      "last_close": 99.621,
+      "atr14": 0.349,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -40,8 +40,8 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": "NA",
-      "atr14": 0.00436,
+      "last_close": 0.71644,
+      "atr14": 0.00416,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -49,8 +49,8 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": "NA",
-      "atr14": 0.00551,
+      "last_close": 1.15942,
+      "atr14": 0.00541,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -58,8 +58,8 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": "NA",
-      "atr14": 0.758,
+      "last_close": 160.035,
+      "atr14": 0.726,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -132,8 +132,8 @@
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
-    "atr14": 74.96,
-    "stop_distance_usd": 112.44,
+    "atr14": 75.36,
+    "stop_distance_usd": 113.04,
     "lot_size": 0.0,
     "tradeable": false,
     "status": "UN-TRADEABLE (Exceeds Risk Limit)",
