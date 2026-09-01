@@ -1,29 +1,29 @@
 {
-  "generated_utc": "2026-08-31 23:31:04",
+  "generated_utc": "2026-08-31 23:59:20",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4491.1,
+      "last_close": 4495.0,
       "atr14": 74.36,
-      "vwap": 4486.36,
-      "volume_z": -0.782,
+      "vwap": 4486.39,
+      "volume_z": -0.735,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 67.12,
+      "last_close": 67.24,
       "atr14": 1.825,
       "vwap": 67.23,
-      "volume_z": -0.912,
+      "volume_z": -0.827,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 99.413,
-      "atr14": 0.385,
+      "last_close": 99.424,
+      "atr14": 0.382,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -40,7 +40,7 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.71705,
+      "last_close": 0.71731,
       "atr14": 0.00429,
       "vwap": "NA",
       "volume_z": "NA",
@@ -49,7 +49,7 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.16184,
+      "last_close": 1.16212,
       "atr14": 0.00526,
       "vwap": "NA",
       "volume_z": "NA",
@@ -58,26 +58,40 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 159.8,
-      "atr14": 0.734,
+      "last_close": 159.772,
+      "atr14": 0.691,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
     }
   },
   "pivots": {
-    "basis_date": "2026-08-28",
-    "prev_high": 4625.5,
-    "prev_low": 4451.8,
-    "prev_close": 4478.1,
-    "PP": 4518.47,
-    "R1": 4585.13,
-    "R2": 4692.17,
-    "S1": 4411.43,
-    "S2": 4344.77
+    "basis_date": "2026-08-31",
+    "prev_high": 4504.8,
+    "prev_low": 4490.3,
+    "prev_close": 4495.4,
+    "PP": 4496.83,
+    "R1": 4503.37,
+    "R2": 4511.33,
+    "S1": 4488.87,
+    "S2": 4482.33
   },
   "smc": {
     "fvgs": [
+      {
+        "time": "2026-08-31 18:15",
+        "direction": "Bearish",
+        "zone_low": 4484.0,
+        "zone_high": 4485.1,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-08-31 19:30",
+        "direction": "Bullish",
+        "zone_low": 4484.7,
+        "zone_high": 4488.4,
+        "status": "OPEN"
+      },
       {
         "time": "2026-08-31 20:00",
         "direction": "Bullish",
@@ -93,24 +107,10 @@
         "status": "OPEN"
       },
       {
-        "time": "2026-08-31 23:00",
-        "direction": "Bearish",
-        "zone_low": 4495.8,
-        "zone_high": 4495.9,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-08-31 23:15",
-        "direction": "Bearish",
-        "zone_low": 4492.5,
-        "zone_high": 4494.6,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-08-31 23:21",
-        "direction": "Bearish",
-        "zone_low": 4491.1,
-        "zone_high": 4492.3,
+        "time": "2026-08-31 23:45",
+        "direction": "Bullish",
+        "zone_low": 4492.8,
+        "zone_high": 4494.2,
         "status": "OPEN"
       }
     ],
@@ -128,7 +128,15 @@
     "short": 33825.0,
     "net": 243334.0
   },
-  "news": [],
+  "news": [
+    {
+      "time_utc": "14:00",
+      "country": "USD",
+      "title": "ISM Manufacturing PMI",
+      "forecast": "55.2",
+      "previous": "55.6"
+    }
+  ],
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
