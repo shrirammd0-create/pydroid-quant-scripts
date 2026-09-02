@@ -1,29 +1,29 @@
 {
-  "generated_utc": "2026-09-01 23:01:34",
+  "generated_utc": "2026-09-02 01:01:08",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4376.6,
-      "atr14": 77.79,
-      "vwap": 4421.15,
-      "volume_z": -1.01,
+      "last_close": 4367.9,
+      "atr14": 73.28,
+      "vwap": 4372.21,
+      "volume_z": -0.882,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 64.66,
-      "atr14": 1.88,
-      "vwap": 65.77,
-      "volume_z": -1.123,
+      "last_close": 64.625,
+      "atr14": 1.855,
+      "vwap": 64.76,
+      "volume_z": -1.162,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 99.654,
-      "atr14": 0.383,
+      "last_close": 99.719,
+      "atr14": 0.353,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -40,8 +40,8 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.71495,
-      "atr14": 0.00444,
+      "last_close": 0.71444,
+      "atr14": 0.00422,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -49,8 +49,8 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.15955,
-      "atr14": 0.00544,
+      "last_close": 1.15875,
+      "atr14": 0.00517,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -58,26 +58,23 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 160.207,
-      "atr14": 0.742,
+      "last_close": 160.287,
+      "atr14": 0.7,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
     }
   },
-  "pivots": {
-    "basis_date": "2026-08-31",
-    "prev_high": 4466.9,
-    "prev_low": 4410.9,
-    "prev_close": 4431.1,
-    "PP": 4436.3,
-    "R1": 4461.7,
-    "R2": 4492.3,
-    "S1": 4405.7,
-    "S2": 4380.3
-  },
+  "pivots": null,
   "smc": {
     "fvgs": [
+      {
+        "time": "2026-09-01 16:15",
+        "direction": "Bearish",
+        "zone_low": 4414.0,
+        "zone_high": 4417.0,
+        "status": "OPEN"
+      },
       {
         "time": "2026-09-01 16:30",
         "direction": "Bearish",
@@ -105,19 +102,12 @@
         "zone_low": 4377.4,
         "zone_high": 4380.9,
         "status": "OPEN"
-      },
-      {
-        "time": "2026-09-01 22:51",
-        "direction": "Bullish",
-        "zone_low": 4375.9,
-        "zone_high": 4376.6,
-        "status": "OPEN"
       }
     ],
     "sweep": {
       "swept_pdh": false,
       "swept_pdl": false,
-      "detail": "No sweep on current candle"
+      "detail": "Insufficient data"
     }
   },
   "cot": {
@@ -130,18 +120,67 @@
   },
   "news": [
     {
-      "time_utc": "14:00",
-      "country": "USD",
-      "title": "ISM Manufacturing PMI",
-      "forecast": "55.2",
-      "previous": "55.6"
+      "time_utc": "01:30",
+      "country": "AUD",
+      "title": "GDP q/q",
+      "forecast": "0.3%",
+      "previous": "0.3%"
+    },
+    {
+      "time_utc": "02:00",
+      "country": "NZD",
+      "title": "Official Cash Rate",
+      "forecast": "2.75%",
+      "previous": "2.50%"
+    },
+    {
+      "time_utc": "02:00",
+      "country": "NZD",
+      "title": "RBNZ Monetary Policy Statement",
+      "forecast": "-",
+      "previous": "-"
+    },
+    {
+      "time_utc": "02:00",
+      "country": "NZD",
+      "title": "RBNZ Rate Statement",
+      "forecast": "-",
+      "previous": "-"
+    },
+    {
+      "time_utc": "03:00",
+      "country": "NZD",
+      "title": "RBNZ Press Conference",
+      "forecast": "-",
+      "previous": "-"
+    },
+    {
+      "time_utc": "13:45",
+      "country": "CAD",
+      "title": "BOC Rate Statement",
+      "forecast": "-",
+      "previous": "-"
+    },
+    {
+      "time_utc": "13:45",
+      "country": "CAD",
+      "title": "Overnight Rate",
+      "forecast": "2.25%",
+      "previous": "2.25%"
+    },
+    {
+      "time_utc": "14:30",
+      "country": "CAD",
+      "title": "BOC Press Conference",
+      "forecast": "-",
+      "previous": "-"
     }
   ],
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
-    "atr14": 77.79,
-    "stop_distance_usd": 116.68,
+    "atr14": 73.28,
+    "stop_distance_usd": 109.92,
     "lot_size": 0.0,
     "tradeable": false,
     "status": "UN-TRADEABLE (Exceeds Risk Limit)",
