@@ -1,28 +1,28 @@
 {
-  "generated_utc": "2026-09-04 17:48:52",
+  "generated_utc": "2026-09-04 20:18:54",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4472.0,
+      "last_close": 4478.7,
       "atr14": 91.06,
-      "vwap": 4481.06,
-      "volume_z": -1.387,
+      "vwap": 4480.4,
+      "volume_z": -1.881,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 66.57,
+      "last_close": 66.77,
       "atr14": 2.3,
-      "vwap": 66.7,
-      "volume_z": -1.144,
+      "vwap": 66.69,
+      "volume_z": -1.385,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 99.138,
+      "last_close": 99.16,
       "atr14": 0.42,
       "vwap": "NA",
       "volume_z": "NA",
@@ -31,7 +31,7 @@
     "^GVZ": {
       "label": "Gold VIX",
       "decimals": 2,
-      "last_close": 26.44,
+      "last_close": 26.63,
       "atr14": 1.53,
       "vwap": "NA",
       "volume_z": "NA",
@@ -40,8 +40,8 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.72067,
-      "atr14": 0.00467,
+      "last_close": 0.72082,
+      "atr14": 0.00466,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -50,7 +50,7 @@
       "label": "EUR/USD",
       "decimals": 5,
       "last_close": 1.16158,
-      "atr14": 0.00551,
+      "atr14": 0.00549,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -58,8 +58,8 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 156.113,
-      "atr14": 1.423,
+      "last_close": 156.265,
+      "atr14": 1.42,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -79,27 +79,6 @@
   "smc": {
     "fvgs": [
       {
-        "time": "2026-09-03 15:45",
-        "direction": "Bearish",
-        "zone_low": 4543.1,
-        "zone_high": 4549.2,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-09-03 18:00",
-        "direction": "Bearish",
-        "zone_low": 4537.1,
-        "zone_high": 4538.4,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-09-04 12:45",
-        "direction": "Bearish",
-        "zone_low": 4456.9,
-        "zone_high": 4510.7,
-        "status": "OPEN"
-      },
-      {
         "time": "2026-09-04 13:30",
         "direction": "Bullish",
         "zone_low": 4441.8,
@@ -107,10 +86,31 @@
         "status": "OPEN"
       },
       {
-        "time": "2026-09-04 17:38",
+        "time": "2026-09-04 18:30",
+        "direction": "Bullish",
+        "zone_low": 4467.4,
+        "zone_high": 4468.9,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-09-04 19:15",
+        "direction": "Bullish",
+        "zone_low": 4473.3,
+        "zone_high": 4474.1,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-09-04 19:30",
+        "direction": "Bullish",
+        "zone_low": 4477.3,
+        "zone_high": 4481.3,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-09-04 20:08",
         "direction": "Bearish",
-        "zone_low": 4472.0,
-        "zone_high": 4475.0,
+        "zone_low": 4478.7,
+        "zone_high": 4479.8,
         "status": "OPEN"
       }
     ],
@@ -123,10 +123,10 @@
   "cot": {
     "source": "cot_reports legacy_fut (non-commercial)",
     "contract": "GOLD - COMMODITY EXCHANGE INC.",
-    "report_date": "2026-08-25",
-    "long": 277159.0,
-    "short": 33825.0,
-    "net": 243334.0
+    "report_date": "2026-09-01",
+    "long": 260485.0,
+    "short": 32361.0,
+    "net": 228124.0
   },
   "news": [
     {
