@@ -1,28 +1,28 @@
 {
-  "generated_utc": "2026-09-08 14:14:42",
+  "generated_utc": "2026-09-08 17:57:03",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4446.5,
-      "atr14": 83.59,
-      "vwap": 4447.69,
-      "volume_z": -1.429,
+      "last_close": 4431.4,
+      "atr14": 83.66,
+      "vwap": 4444.9,
+      "volume_z": -1.957,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 66.795,
+      "last_close": 66.855,
       "atr14": 2.181,
-      "vwap": 66.82,
-      "volume_z": -1.352,
+      "vwap": 66.84,
+      "volume_z": -1.639,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 98.841,
+      "last_close": 98.875,
       "atr14": 0.395,
       "vwap": "NA",
       "volume_z": "NA",
@@ -31,7 +31,7 @@
     "^GVZ": {
       "label": "Gold VIX",
       "decimals": 2,
-      "last_close": 27.5,
+      "last_close": 27.32,
       "atr14": 1.52,
       "vwap": "NA",
       "volume_z": "NA",
@@ -41,7 +41,7 @@
       "label": "AUD/USD",
       "decimals": 5,
       "last_close": 0.72239,
-      "atr14": 0.00413,
+      "atr14": 0.00417,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -49,7 +49,7 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.16225,
+      "last_close": 1.16293,
       "atr14": 0.00406,
       "vwap": "NA",
       "volume_z": "NA",
@@ -58,7 +58,7 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 154.108,
+      "last_close": 154.252,
       "atr14": 1.614,
       "vwap": "NA",
       "volume_z": "NA",
@@ -91,6 +91,13 @@
         "zone_low": 4456.2,
         "zone_high": 4462.1,
         "status": "OPEN"
+      },
+      {
+        "time": "2026-09-08 17:45",
+        "direction": "Bearish",
+        "zone_low": 4432.0,
+        "zone_high": 4436.8,
+        "status": "OPEN"
       }
     ],
     "sweep": {
@@ -111,8 +118,8 @@
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
-    "atr14": 83.59,
-    "stop_distance_usd": 125.38,
+    "atr14": 83.66,
+    "stop_distance_usd": 125.5,
     "lot_size": 0.0,
     "tradeable": false,
     "status": "UN-TRADEABLE (Exceeds Risk Limit)",
