@@ -1,6 +1,6 @@
 ================================================================================
 XAUUSD QUANT DATA & ALERTING PIPELINE
-Generated: 2026-09-11 23:27:58 UTC  |  Yahoo raw-JSON (no yfinance)
+Generated: 2026-09-12 01:26:13 UTC  |  Yahoo raw-JSON (no yfinance)
 ================================================================================
 --------------------------------------------------------------------------------
 [1] MARKET SNAPSHOT SUMMARY (CSV)
@@ -23,14 +23,14 @@ USDJPY_Daily_ATR14,1.706
 Gold_VWAP,4397.33
 Gold_Volume_Z_20,-1.219
 Gold_Body_Ratio,NA
-Pivot_Basis_Date,2026-09-10
-Prev_Day_High,4420.0
-Prev_Day_Low,4330.7
-Pivot_PP,4371.73
-Pivot_R1,4412.77
-Pivot_R2,4461.03
-Pivot_S1,4323.47
-Pivot_S2,4282.43
+Pivot_Basis_Date,2026-09-11
+Prev_Day_High,4444.9
+Prev_Day_Low,4333.0
+Pivot_PP,4389.3
+Pivot_R1,4445.6
+Pivot_R2,4501.2
+Pivot_S1,4333.7
+Pivot_S2,4277.4
 COT_Source,cot_reports legacy_fut (non-commercial)
 COT_Report_Date,2026-09-08
 COT_HedgeFund_Long,261007.0
@@ -55,11 +55,7 @@ Liquidity_Sweep,,,,,"No sweep on current candle"
 [3] TODAY'S HIGH-IMPACT NEWS (UTC)
 --------------------------------------------------------------------------------
 Time,Country,Event,Forecast,Previous
-06:00,GBP,"GDP m/m",0.0%,0.3%
-12:30,USD,"Core CPI m/m",0.2%,0.2%
-12:30,USD,"Core CPI y/y",2.4%,2.5%
-12:30,USD,"CPI m/m",0.4%,0.1%
-12:30,USD,"CPI y/y",3.4%,3.4%
+NO_HIGH_IMPACT_EVENTS_TODAY,,,,
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 [4] GOLD DAILY - 1MO / 1D (tail)

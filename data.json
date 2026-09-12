@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-11 23:27:58",
+  "generated_utc": "2026-09-12 01:26:13",
   "assets": {
     "GC=F": {
       "label": "Gold",
@@ -66,15 +66,15 @@
     }
   },
   "pivots": {
-    "basis_date": "2026-09-10",
-    "prev_high": 4420.0,
-    "prev_low": 4330.7,
-    "prev_close": 4364.5,
-    "PP": 4371.73,
-    "R1": 4412.77,
-    "R2": 4461.03,
-    "S1": 4323.47,
-    "S2": 4282.43
+    "basis_date": "2026-09-11",
+    "prev_high": 4444.9,
+    "prev_low": 4333.0,
+    "prev_close": 4390.0,
+    "PP": 4389.3,
+    "R1": 4445.6,
+    "R2": 4501.2,
+    "S1": 4333.7,
+    "S2": 4277.4
   },
   "smc": {
     "fvgs": [
@@ -128,43 +128,7 @@
     "short": 29047.0,
     "net": 231960.0
   },
-  "news": [
-    {
-      "time_utc": "06:00",
-      "country": "GBP",
-      "title": "GDP m/m",
-      "forecast": "0.0%",
-      "previous": "0.3%"
-    },
-    {
-      "time_utc": "12:30",
-      "country": "USD",
-      "title": "Core CPI m/m",
-      "forecast": "0.2%",
-      "previous": "0.2%"
-    },
-    {
-      "time_utc": "12:30",
-      "country": "USD",
-      "title": "Core CPI y/y",
-      "forecast": "2.4%",
-      "previous": "2.5%"
-    },
-    {
-      "time_utc": "12:30",
-      "country": "USD",
-      "title": "CPI m/m",
-      "forecast": "0.4%",
-      "previous": "0.1%"
-    },
-    {
-      "time_utc": "12:30",
-      "country": "USD",
-      "title": "CPI y/y",
-      "forecast": "3.4%",
-      "previous": "3.4%"
-    }
-  ],
+  "news": [],
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
