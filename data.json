@@ -1,29 +1,29 @@
 {
-  "generated_utc": "2026-09-16 23:51:35",
+  "generated_utc": "2026-09-17 03:34:36",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4308.3,
-      "atr14": 109.81,
-      "vwap": 4355.64,
-      "volume_z": -0.56,
+      "last_close": 4323.5,
+      "atr14": 117.87,
+      "vwap": 4330.64,
+      "volume_z": -1.492,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 63.58,
-      "atr14": 1.905,
-      "vwap": 64.57,
-      "volume_z": -0.565,
+      "last_close": 63.865,
+      "atr14": 1.959,
+      "vwap": 63.96,
+      "volume_z": -1.072,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 100.34,
-      "atr14": 0.466,
+      "last_close": 100.336,
+      "atr14": 0.462,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -40,8 +40,8 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.70922,
-      "atr14": 0.00432,
+      "last_close": 0.71043,
+      "atr14": 0.00416,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -49,8 +49,8 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.14732,
-      "atr14": 0.00498,
+      "last_close": 1.14626,
+      "atr14": 0.00463,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -58,33 +58,26 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 156.064,
-      "atr14": 1.879,
+      "last_close": 156.098,
+      "atr14": 1.855,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
     }
   },
   "pivots": {
-    "basis_date": "2026-09-15",
-    "prev_high": 4358.2,
-    "prev_low": 4301.6,
-    "prev_close": 4332.8,
-    "PP": 4330.87,
-    "R1": 4360.13,
-    "R2": 4387.47,
-    "S1": 4303.53,
-    "S2": 4274.27
+    "basis_date": "2026-09-16",
+    "prev_high": 4413.1,
+    "prev_low": 4273.3,
+    "prev_close": 4387.5,
+    "PP": 4357.97,
+    "R1": 4442.63,
+    "R2": 4497.77,
+    "S1": 4302.83,
+    "S2": 4218.17
   },
   "smc": {
     "fvgs": [
-      {
-        "time": "2026-09-16 15:00",
-        "direction": "Bullish",
-        "zone_low": 4387.9,
-        "zone_high": 4391.9,
-        "status": "OPEN"
-      },
       {
         "time": "2026-09-16 18:15",
         "direction": "Bearish",
@@ -93,24 +86,17 @@
         "status": "OPEN"
       },
       {
-        "time": "2026-09-16 18:45",
+        "time": "2026-09-17 02:00",
         "direction": "Bearish",
-        "zone_low": 4347.8,
-        "zone_high": 4347.9,
+        "zone_low": 4338.9,
+        "zone_high": 4346.6,
         "status": "OPEN"
       },
       {
-        "time": "2026-09-16 19:45",
-        "direction": "Bullish",
-        "zone_low": 4296.8,
-        "zone_high": 4303.5,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-09-16 23:30",
-        "direction": "Bullish",
-        "zone_low": 4306.1,
-        "zone_high": 4306.4,
+        "time": "2026-09-17 02:15",
+        "direction": "Bearish",
+        "zone_low": 4331.3,
+        "zone_high": 4335.8,
         "status": "OPEN"
       }
     ],
@@ -130,53 +116,32 @@
   },
   "news": [
     {
-      "time_utc": "06:00",
+      "time_utc": "11:00",
       "country": "GBP",
-      "title": "CPI y/y",
-      "forecast": "3.1%",
-      "previous": "2.9%"
+      "title": "Monetary Policy Summary",
+      "forecast": "-",
+      "previous": "-"
     },
     {
-      "time_utc": "18:00",
-      "country": "USD",
-      "title": "Federal Funds Rate",
-      "forecast": "4.00%",
+      "time_utc": "11:00",
+      "country": "GBP",
+      "title": "MPC Official Bank Rate Votes",
+      "forecast": "3-0-6",
+      "previous": "3-0-6"
+    },
+    {
+      "time_utc": "11:00",
+      "country": "GBP",
+      "title": "Official Bank Rate",
+      "forecast": "3.75%",
       "previous": "3.75%"
-    },
-    {
-      "time_utc": "18:00",
-      "country": "USD",
-      "title": "FOMC Economic Projections",
-      "forecast": "-",
-      "previous": "-"
-    },
-    {
-      "time_utc": "18:00",
-      "country": "USD",
-      "title": "FOMC Statement",
-      "forecast": "-",
-      "previous": "-"
-    },
-    {
-      "time_utc": "18:30",
-      "country": "USD",
-      "title": "FOMC Press Conference",
-      "forecast": "-",
-      "previous": "-"
-    },
-    {
-      "time_utc": "22:45",
-      "country": "NZD",
-      "title": "GDP q/q",
-      "forecast": "0.1%",
-      "previous": "0.8%"
     }
   ],
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
-    "atr14": 109.81,
-    "stop_distance_usd": 164.72,
+    "atr14": 117.87,
+    "stop_distance_usd": 176.81,
     "lot_size": 0.0,
     "tradeable": false,
     "status": "UN-TRADEABLE (Exceeds Risk Limit)",
