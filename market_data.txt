@@ -1,6 +1,6 @@
 ================================================================================
 XAUUSD QUANT DATA & ALERTING PIPELINE
-Generated: 2026-09-18 23:29:30 UTC  |  Yahoo raw-JSON (no yfinance)
+Generated: 2026-09-19 01:29:31 UTC  |  Yahoo raw-JSON (no yfinance)
 ================================================================================
 --------------------------------------------------------------------------------
 [1] MARKET SNAPSHOT SUMMARY (CSV)
@@ -23,14 +23,14 @@ USDJPY_Daily_ATR14,2.078
 Gold_VWAP,4409.23
 Gold_Volume_Z_20,-1.488
 Gold_Body_Ratio,NA
-Pivot_Basis_Date,2026-09-17
-Prev_Day_High,4423.3
-Prev_Day_Low,4294.5
-Pivot_PP,4372.5
-Pivot_R1,4450.5
-Pivot_R2,4501.3
-Pivot_S1,4321.7
-Pivot_S2,4243.7
+Pivot_Basis_Date,2026-09-18
+Prev_Day_High,4439.8
+Prev_Day_Low,4372.2
+Pivot_PP,4409.3
+Pivot_R1,4446.4
+Pivot_R2,4476.9
+Pivot_S1,4378.8
+Pivot_S2,4341.7
 COT_Source,cot_reports legacy_fut (non-commercial)
 COT_Report_Date,2026-09-15
 COT_HedgeFund_Long,258059.0
@@ -55,9 +55,7 @@ Liquidity_Sweep,,,,,"No sweep on current candle"
 [3] TODAY'S HIGH-IMPACT NEWS (UTC)
 --------------------------------------------------------------------------------
 Time,Country,Event,Forecast,Previous
-02:54,JPY,"BOJ Policy Rate",<1.25%,<1.00%
-02:54,JPY,"Monetary Policy Statement",-,-
-06:30,JPY,"BOJ Press Conference",-,-
+NO_HIGH_IMPACT_EVENTS_TODAY,,,,
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 [4] GOLD DAILY - 1MO / 1D (tail)
