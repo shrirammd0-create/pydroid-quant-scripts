@@ -1,29 +1,29 @@
 {
-  "generated_utc": "2026-09-26 01:59:59",
+  "generated_utc": "2026-09-26 07:30:45",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4320.5,
+      "last_close": "NA",
       "atr14": 94.18,
-      "vwap": 4320.57,
-      "volume_z": -1.51,
+      "vwap": "NA",
+      "volume_z": 0.0,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 64.71,
-      "atr14": 1.465,
-      "vwap": 64.72,
-      "volume_z": -0.972,
+      "last_close": "NA",
+      "atr14": 1.375,
+      "vwap": "NA",
+      "volume_z": "NA",
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 101.035,
-      "atr14": 0.447,
+      "last_close": "NA",
+      "atr14": 0.448,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -41,7 +41,7 @@
       "label": "AUD/USD",
       "decimals": 5,
       "last_close": "NA",
-      "atr14": 0.00483,
+      "atr14": 0.00469,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -50,7 +50,7 @@
       "label": "EUR/USD",
       "decimals": 5,
       "last_close": "NA",
-      "atr14": 0.0055,
+      "atr14": 0.00538,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -59,7 +59,7 @@
       "label": "USD/JPY",
       "decimals": 3,
       "last_close": "NA",
-      "atr14": 1.4,
+      "atr14": 1.378,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -69,34 +69,41 @@
     "basis_date": "2026-09-25",
     "prev_high": 4351.6,
     "prev_low": 4289.2,
-    "prev_close": 4320.5,
-    "PP": 4320.43,
-    "R1": 4351.67,
-    "R2": 4382.83,
-    "S1": 4289.27,
-    "S2": 4258.03
+    "prev_close": 4321.2,
+    "PP": 4320.67,
+    "R1": 4352.13,
+    "R2": 4383.07,
+    "S1": 4289.73,
+    "S2": 4258.27
   },
   "smc": {
     "fvgs": [
       {
-        "time": "2026-09-23 05:45",
-        "direction": "Bearish",
-        "zone_low": 4372.5,
-        "zone_high": 4377.3,
+        "time": "2026-09-25 15:00",
+        "direction": "Bullish",
+        "zone_low": 4308.1,
+        "zone_high": 4309.1,
         "status": "OPEN"
       },
       {
-        "time": "2026-09-23 07:15",
-        "direction": "Bearish",
-        "zone_low": 4365.4,
-        "zone_high": 4367.1,
+        "time": "2026-09-25 16:00",
+        "direction": "Bullish",
+        "zone_low": 4321.0,
+        "zone_high": 4322.4,
         "status": "OPEN"
       },
       {
-        "time": "2026-09-25 11:30",
-        "direction": "Bearish",
-        "zone_low": 4345.2,
-        "zone_high": 4345.4,
+        "time": "2026-09-25 18:30",
+        "direction": "Bullish",
+        "zone_low": 4321.0,
+        "zone_high": 4322.1,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-09-25 18:45",
+        "direction": "Bullish",
+        "zone_low": 4325.2,
+        "zone_high": 4325.9,
         "status": "OPEN"
       },
       {
@@ -104,13 +111,6 @@
         "direction": "Bearish",
         "zone_low": 4323.2,
         "zone_high": 4325.5,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-09-25 20:59",
-        "direction": "Bearish",
-        "zone_low": 4320.5,
-        "zone_high": 4320.6,
         "status": "OPEN"
       }
     ],
