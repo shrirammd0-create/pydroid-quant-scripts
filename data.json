@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-25 23:33:56",
+  "generated_utc": "2026-09-26 01:59:59",
   "assets": {
     "GC=F": {
       "label": "Gold",
@@ -66,15 +66,15 @@
     }
   },
   "pivots": {
-    "basis_date": "2026-09-24",
-    "prev_high": 4338.0,
-    "prev_low": 4278.3,
-    "prev_close": 4298.0,
-    "PP": 4304.77,
-    "R1": 4331.23,
-    "R2": 4364.47,
-    "S1": 4271.53,
-    "S2": 4245.07
+    "basis_date": "2026-09-25",
+    "prev_high": 4351.6,
+    "prev_low": 4289.2,
+    "prev_close": 4320.5,
+    "PP": 4320.43,
+    "R1": 4351.67,
+    "R2": 4382.83,
+    "S1": 4289.27,
+    "S2": 4258.03
   },
   "smc": {
     "fvgs": [
@@ -128,15 +128,7 @@
     "short": 28129.0,
     "net": 225853.0
   },
-  "news": [
-    {
-      "time_utc": "09:15",
-      "country": "GBP",
-      "title": "BOE Gov Bailey Speaks",
-      "forecast": "-",
-      "previous": "-"
-    }
-  ],
+  "news": [],
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
