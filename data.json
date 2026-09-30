@@ -1,29 +1,29 @@
 {
-  "generated_utc": "2026-09-29 22:50:32",
+  "generated_utc": "2026-09-30 01:50:45",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4210.3,
-      "atr14": 95.91,
-      "vwap": 4183.71,
-      "volume_z": -0.63,
+      "last_close": 4201.0,
+      "atr14": 89.96,
+      "vwap": 4207.35,
+      "volume_z": -1.073,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 61.835,
-      "atr14": 1.475,
-      "vwap": 61.27,
-      "volume_z": -0.798,
+      "last_close": 61.405,
+      "atr14": 1.257,
+      "vwap": 61.58,
+      "volume_z": -0.851,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 101.377,
-      "atr14": 0.45,
+      "last_close": 101.343,
+      "atr14": 0.422,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -40,8 +40,8 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.69871,
-      "atr14": 0.00465,
+      "last_close": 0.69672,
+      "atr14": 0.00456,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -49,8 +49,8 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.13417,
-      "atr14": 0.00546,
+      "last_close": 1.13392,
+      "atr14": 0.0051,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -58,26 +58,23 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 157.35,
-      "atr14": 1.328,
+      "last_close": 156.725,
+      "atr14": 1.349,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
     }
   },
-  "pivots": {
-    "basis_date": "2026-09-28",
-    "prev_high": 4315.6,
-    "prev_low": 4143.1,
-    "prev_close": 4168.4,
-    "PP": 4209.03,
-    "R1": 4274.97,
-    "R2": 4381.53,
-    "S1": 4102.47,
-    "S2": 4036.53
-  },
+  "pivots": null,
   "smc": {
     "fvgs": [
+      {
+        "time": "2026-09-29 14:15",
+        "direction": "Bullish",
+        "zone_low": 4196.8,
+        "zone_high": 4197.3,
+        "status": "OPEN"
+      },
       {
         "time": "2026-09-29 15:30",
         "direction": "Bearish",
@@ -100,24 +97,17 @@
         "status": "OPEN"
       },
       {
-        "time": "2026-09-29 22:30",
+        "time": "2026-09-30 01:15",
         "direction": "Bearish",
-        "zone_low": 4212.7,
-        "zone_high": 4212.8,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-09-29 22:40",
-        "direction": "Bearish",
-        "zone_low": 4210.3,
-        "zone_high": 4212.3,
+        "zone_low": 4206.4,
+        "zone_high": 4208.1,
         "status": "OPEN"
       }
     ],
     "sweep": {
       "swept_pdh": false,
       "swept_pdl": false,
-      "detail": "No sweep on current candle"
+      "detail": "Insufficient data"
     }
   },
   "cot": {
@@ -130,25 +120,46 @@
   },
   "news": [
     {
-      "time_utc": "04:30",
+      "time_utc": "01:30",
       "country": "AUD",
-      "title": "Cash Rate",
-      "forecast": "4.60%",
-      "previous": "4.35%"
+      "title": "CPI m/m",
+      "forecast": "0.5%",
+      "previous": "1.0%"
     },
     {
-      "time_utc": "04:30",
+      "time_utc": "01:30",
       "country": "AUD",
-      "title": "RBA Rate Statement",
-      "forecast": "-",
-      "previous": "-"
+      "title": "CPI y/y",
+      "forecast": "4.1%",
+      "previous": "3.5%"
+    },
+    {
+      "time_utc": "01:30",
+      "country": "AUD",
+      "title": "Trimmed Mean CPI m/m",
+      "forecast": "0.3%",
+      "previous": "0.5%"
+    },
+    {
+      "time_utc": "12:30",
+      "country": "USD",
+      "title": "Core PCE Price Index m/m",
+      "forecast": "0.3%",
+      "previous": "0.2%"
+    },
+    {
+      "time_utc": "12:30",
+      "country": "USD",
+      "title": "Final GDP q/q",
+      "forecast": "1.5%",
+      "previous": "1.5%"
     }
   ],
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
-    "atr14": 95.91,
-    "stop_distance_usd": 143.87,
+    "atr14": 89.96,
+    "stop_distance_usd": 134.95,
     "lot_size": 0.0,
     "tradeable": false,
     "status": "UN-TRADEABLE (Exceeds Risk Limit)",
