@@ -1,29 +1,29 @@
 {
-  "generated_utc": "2026-10-01 21:22:35",
+  "generated_utc": "2026-10-02 01:00:10",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4207.8,
-      "atr14": 89.71,
-      "vwap": 4198.56,
-      "volume_z": -0.985,
+      "last_close": 4189.3,
+      "atr14": 81.41,
+      "vwap": 4195.43,
+      "volume_z": -1.028,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 61.35,
-      "atr14": 1.265,
-      "vwap": 61.16,
-      "volume_z": -1.189,
+      "last_close": 61.015,
+      "atr14": 1.183,
+      "vwap": 61.15,
+      "volume_z": -1.289,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 102.032,
-      "atr14": 0.476,
+      "last_close": 102.072,
+      "atr14": 0.428,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -40,8 +40,8 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.69314,
-      "atr14": 0.00502,
+      "last_close": 0.69204,
+      "atr14": 0.00468,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -49,8 +49,8 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.12499,
-      "atr14": 0.00626,
+      "last_close": 1.12385,
+      "atr14": 0.00567,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -58,66 +58,56 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 158.055,
-      "atr14": 1.353,
+      "last_close": 158.114,
+      "atr14": 1.208,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
     }
   },
-  "pivots": {
-    "basis_date": "2026-09-30",
-    "prev_high": 4251.1,
-    "prev_low": 4178.2,
-    "prev_close": 4186.7,
-    "PP": 4205.33,
-    "R1": 4232.47,
-    "R2": 4278.23,
-    "S1": 4159.57,
-    "S2": 4132.43
-  },
+  "pivots": null,
   "smc": {
     "fvgs": [
       {
-        "time": "2026-09-29 05:45",
+        "time": "2026-10-01 17:15",
         "direction": "Bullish",
-        "zone_low": 4164.3,
-        "zone_high": 4165.5,
+        "zone_low": 4197.4,
+        "zone_high": 4200.1,
         "status": "OPEN"
       },
       {
-        "time": "2026-09-30 13:15",
+        "time": "2026-10-01 20:30",
         "direction": "Bearish",
-        "zone_low": 4235.4,
-        "zone_high": 4237.7,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-09-30 13:30",
-        "direction": "Bearish",
-        "zone_low": 4227.0,
-        "zone_high": 4233.3,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-10-01 01:15",
-        "direction": "Bullish",
-        "zone_low": 4176.3,
-        "zone_high": 4189.2,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-10-01 20:59",
-        "direction": "Bullish",
         "zone_low": 4206.2,
-        "zone_high": 4207.8,
+        "zone_high": 4206.3,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-10-02 00:15",
+        "direction": "Bearish",
+        "zone_low": 4201.0,
+        "zone_high": 4207.7,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-10-02 00:30",
+        "direction": "Bearish",
+        "zone_low": 4196.3,
+        "zone_high": 4198.6,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-10-02 00:45",
+        "direction": "Bearish",
+        "zone_low": 4191.1,
+        "zone_high": 4193.3,
         "status": "OPEN"
       }
     ],
     "sweep": {
       "swept_pdh": false,
       "swept_pdl": false,
-      "detail": "No sweep on current candle"
+      "detail": "Insufficient data"
     }
   },
   "cot": {
@@ -128,12 +118,34 @@
     "short": 28129.0,
     "net": 225853.0
   },
-  "news": [],
+  "news": [
+    {
+      "time_utc": "12:30",
+      "country": "USD",
+      "title": "Average Hourly Earnings m/m",
+      "forecast": "0.3%",
+      "previous": "0.3%"
+    },
+    {
+      "time_utc": "12:30",
+      "country": "USD",
+      "title": "Non-Farm Employment Change",
+      "forecast": "89K",
+      "previous": "162K"
+    },
+    {
+      "time_utc": "12:30",
+      "country": "USD",
+      "title": "Unemployment Rate",
+      "forecast": "4.1%",
+      "previous": "4.1%"
+    }
+  ],
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
-    "atr14": 89.71,
-    "stop_distance_usd": 134.57,
+    "atr14": 81.41,
+    "stop_distance_usd": 122.12,
     "lot_size": 0.0,
     "tradeable": false,
     "status": "UN-TRADEABLE (Exceeds Risk Limit)",
