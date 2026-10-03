@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-02 22:35:10",
+  "generated_utc": "2026-10-03 01:27:42",
   "assets": {
     "GC=F": {
       "label": "Gold",
@@ -40,7 +40,7 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.69575,
+      "last_close": "NA",
       "atr14": 0.00527,
       "vwap": "NA",
       "volume_z": "NA",
@@ -49,7 +49,7 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.12575,
+      "last_close": "NA",
       "atr14": 0.00611,
       "vwap": "NA",
       "volume_z": "NA",
@@ -58,23 +58,23 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 157.83,
-      "atr14": 1.315,
+      "last_close": "NA",
+      "atr14": 1.23,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
     }
   },
   "pivots": {
-    "basis_date": "2026-10-01",
-    "prev_high": 4222.8,
-    "prev_low": 4169.4,
-    "prev_close": 4202.3,
-    "PP": 4198.17,
-    "R1": 4226.93,
-    "R2": 4251.57,
-    "S1": 4173.53,
-    "S2": 4144.77
+    "basis_date": "2026-10-02",
+    "prev_high": 4259.0,
+    "prev_low": 4153.8,
+    "prev_close": 4172.1,
+    "PP": 4194.97,
+    "R1": 4236.13,
+    "R2": 4300.17,
+    "S1": 4130.93,
+    "S2": 4089.77
   },
   "smc": {
     "fvgs": [
@@ -121,29 +121,7 @@
     "short": 31104.0,
     "net": 218632.0
   },
-  "news": [
-    {
-      "time_utc": "12:30",
-      "country": "USD",
-      "title": "Average Hourly Earnings m/m",
-      "forecast": "0.3%",
-      "previous": "0.3%"
-    },
-    {
-      "time_utc": "12:30",
-      "country": "USD",
-      "title": "Non-Farm Employment Change",
-      "forecast": "89K",
-      "previous": "162K"
-    },
-    {
-      "time_utc": "12:30",
-      "country": "USD",
-      "title": "Unemployment Rate",
-      "forecast": "4.1%",
-      "previous": "4.1%"
-    }
-  ],
+  "news": [],
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
