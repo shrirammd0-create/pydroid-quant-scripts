@@ -1,28 +1,28 @@
 {
-  "generated_utc": "2026-10-07 16:47:01",
+  "generated_utc": "2026-10-07 21:46:53",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4136.8,
-      "atr14": 82.64,
-      "vwap": 4135.32,
-      "volume_z": -1.133,
+      "last_close": 4136.7,
+      "atr14": 82.63,
+      "vwap": 4135.88,
+      "volume_z": -1.07,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 60.215,
+      "last_close": 60.05,
       "atr14": 1.337,
       "vwap": 60.17,
-      "volume_z": -1.211,
+      "volume_z": -0.875,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 102.306,
+      "last_close": 102.279,
       "atr14": 0.497,
       "vwap": "NA",
       "volume_z": "NA",
@@ -31,7 +31,7 @@
     "^GVZ": {
       "label": "Gold VIX",
       "decimals": 2,
-      "last_close": 23.27,
+      "last_close": 23.39,
       "atr14": 0.97,
       "vwap": "NA",
       "volume_z": "NA",
@@ -40,8 +40,8 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.69643,
-      "atr14": 0.00526,
+      "last_close": 0.69633,
+      "atr14": 0.00527,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -49,8 +49,8 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.11944,
-      "atr14": 0.00723,
+      "last_close": 1.12007,
+      "atr14": 0.00717,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -58,8 +58,8 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 158.071,
-      "atr14": 1.124,
+      "last_close": 158.033,
+      "atr14": 1.12,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -107,10 +107,10 @@
         "status": "OPEN"
       },
       {
-        "time": "2026-10-07 12:30",
-        "direction": "Bearish",
-        "zone_low": 4114.2,
-        "zone_high": 4145.4,
+        "time": "2026-10-07 20:15",
+        "direction": "Bullish",
+        "zone_low": 4130.7,
+        "zone_high": 4132.5,
         "status": "OPEN"
       }
     ],
@@ -133,8 +133,8 @@
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
-    "atr14": 82.64,
-    "stop_distance_usd": 123.95,
+    "atr14": 82.63,
+    "stop_distance_usd": 123.94,
     "lot_size": 0.0,
     "tradeable": false,
     "status": "UN-TRADEABLE (Exceeds Risk Limit)",
