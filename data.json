@@ -1,28 +1,28 @@
 {
-  "generated_utc": "2026-10-09 19:40:44",
+  "generated_utc": "2026-10-09 23:31:51",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4219.9,
+      "last_close": 4220.3,
       "atr14": 81.71,
-      "vwap": 4210.0,
-      "volume_z": -1.58,
+      "vwap": 4210.37,
+      "volume_z": -1.416,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 61.07,
+      "last_close": 61.11,
       "atr14": 1.344,
-      "vwap": 60.85,
-      "volume_z": -1.468,
+      "vwap": 60.86,
+      "volume_z": -1.373,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 102.225,
+      "last_close": 102.231,
       "atr14": 0.511,
       "vwap": "NA",
       "volume_z": "NA",
@@ -31,7 +31,7 @@
     "^GVZ": {
       "label": "Gold VIX",
       "decimals": 2,
-      "last_close": 22.71,
+      "last_close": 22.79,
       "atr14": 0.87,
       "vwap": "NA",
       "volume_z": "NA",
@@ -40,8 +40,8 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.69871,
-      "atr14": 0.00533,
+      "last_close": "NA",
+      "atr14": 0.00534,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -49,8 +49,8 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.12032,
-      "atr14": 0.00727,
+      "last_close": "NA",
+      "atr14": 0.00726,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -58,8 +58,8 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 158.236,
-      "atr14": 1.056,
+      "last_close": "NA",
+      "atr14": 1.054,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -109,7 +109,7 @@
       {
         "time": "2026-10-09 19:30",
         "direction": "Bearish",
-        "zone_low": 4220.7,
+        "zone_low": 4222.6,
         "zone_high": 4223.0,
         "status": "OPEN"
       }
