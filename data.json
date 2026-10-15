@@ -1,28 +1,28 @@
 {
-  "generated_utc": "2026-10-15 05:35:00",
+  "generated_utc": "2026-10-15 10:19:15",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4162.5,
+      "last_close": 4177.8,
       "atr14": 80.91,
-      "vwap": 4160.64,
-      "volume_z": -1.142,
+      "vwap": 4165.48,
+      "volume_z": -2.69,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 56.05,
-      "atr14": 1.407,
-      "vwap": 56.23,
-      "volume_z": -1.231,
+      "last_close": 56.86,
+      "atr14": 1.441,
+      "vwap": 56.38,
+      "volume_z": -2.13,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 102.093,
+      "last_close": 102.053,
       "atr14": 0.551,
       "vwap": "NA",
       "volume_z": "NA",
@@ -31,7 +31,7 @@
     "^GVZ": {
       "label": "Gold VIX",
       "decimals": 2,
-      "last_close": "NA",
+      "last_close": 22.78,
       "atr14": 0.91,
       "vwap": "NA",
       "volume_z": "NA",
@@ -40,8 +40,8 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.6956,
-      "atr14": 0.00484,
+      "last_close": 0.69195,
+      "atr14": 0.00529,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -49,7 +49,7 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.12145,
+      "last_close": 1.1212,
       "atr14": 0.00787,
       "vwap": "NA",
       "volume_z": "NA",
@@ -58,7 +58,7 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 157.994,
+      "last_close": 157.775,
       "atr14": 0.792,
       "vwap": "NA",
       "volume_z": "NA",
@@ -78,13 +78,6 @@
   },
   "smc": {
     "fvgs": [
-      {
-        "time": "2026-10-14 18:30",
-        "direction": "Bullish",
-        "zone_low": 4112.9,
-        "zone_high": 4113.2,
-        "status": "OPEN"
-      },
       {
         "time": "2026-10-15 00:00",
         "direction": "Bullish",
@@ -107,10 +100,17 @@
         "status": "OPEN"
       },
       {
-        "time": "2026-10-15 05:25",
-        "direction": "Bearish",
-        "zone_low": 4162.5,
-        "zone_high": 4164.1,
+        "time": "2026-10-15 07:15",
+        "direction": "Bullish",
+        "zone_low": 4157.9,
+        "zone_high": 4160.3,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-10-15 08:15",
+        "direction": "Bullish",
+        "zone_low": 4167.3,
+        "zone_high": 4172.8,
         "status": "OPEN"
       }
     ],
@@ -192,7 +192,7 @@
   "alert": {
     "active": false,
     "conditions": {
-      "close_above_r1": false,
+      "close_above_r1": true,
       "volume_z_above_1_5": false,
       "body_ratio_above_0_70": false,
       "passes_risk_limit": false
