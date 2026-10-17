@@ -1,6 +1,6 @@
 ================================================================================
 XAUUSD QUANT DATA & ALERTING PIPELINE
-Generated: 2026-10-17 11:59:08 UTC  |  Yahoo raw-JSON (no yfinance)
+Generated: 2026-10-17 15:25:37 UTC  |  Yahoo raw-JSON (no yfinance)
 ================================================================================
 --------------------------------------------------------------------------------
 [1] MARKET SNAPSHOT SUMMARY (CSV)
@@ -21,7 +21,7 @@ EURUSD_Daily_ATR14,0.0074
 USDJPY_Last_15m_Close,NA
 USDJPY_Daily_ATR14,0.771
 Gold_VWAP,NA
-Gold_Volume_Z_20,NA
+Gold_Volume_Z_20,0.0
 Gold_Body_Ratio,NA
 Pivot_Basis_Date,2026-10-16
 Prev_Day_High,4220.4
