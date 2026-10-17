@@ -1,12 +1,12 @@
 {
-  "generated_utc": "2026-10-16 23:53:18",
+  "generated_utc": "2026-10-17 03:07:12",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
       "last_close": 4186.7,
-      "atr14": 72.99,
-      "vwap": 4193.56,
+      "atr14": 72.98,
+      "vwap": 4193.58,
       "volume_z": -1.649,
       "body_ratio": "NA"
     },
@@ -32,7 +32,7 @@
       "label": "Gold VIX",
       "decimals": 2,
       "last_close": "NA",
-      "atr14": 0.94,
+      "atr14": 0.8,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -66,15 +66,15 @@
     }
   },
   "pivots": {
-    "basis_date": "2026-10-15",
-    "prev_high": 4197.7,
-    "prev_low": 4120.9,
-    "prev_close": 4170.1,
-    "PP": 4162.9,
-    "R1": 4204.9,
-    "R2": 4239.7,
-    "S1": 4128.1,
-    "S2": 4086.1
+    "basis_date": "2026-10-16",
+    "prev_high": 4220.2,
+    "prev_low": 4167.5,
+    "prev_close": 4186.7,
+    "PP": 4191.47,
+    "R1": 4215.43,
+    "R2": 4244.17,
+    "S1": 4162.73,
+    "S2": 4138.77
   },
   "smc": {
     "fvgs": [
@@ -128,27 +128,12 @@
     "short": 37421.0,
     "net": 207879.0
   },
-  "news": [
-    {
-      "time_utc": "02:00",
-      "country": "GBP",
-      "title": "BOE Gov Bailey Speaks",
-      "forecast": "-",
-      "previous": "-"
-    },
-    {
-      "time_utc": "03:30",
-      "country": "USD",
-      "title": "Fed Chairman Warsh Speaks",
-      "forecast": "-",
-      "previous": "-"
-    }
-  ],
+  "news": [],
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
-    "atr14": 72.99,
-    "stop_distance_usd": 109.48,
+    "atr14": 72.98,
+    "stop_distance_usd": 109.47,
     "lot_size": 0.0,
     "tradeable": false,
     "status": "UN-TRADEABLE (Exceeds Risk Limit)",
