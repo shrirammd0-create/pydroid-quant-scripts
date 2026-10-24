@@ -1,28 +1,28 @@
 {
-  "generated_utc": "2026-10-24 01:22:28",
+  "generated_utc": "2026-10-24 06:13:20",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4010.0,
+      "last_close": "NA",
       "atr14": 71.89,
-      "vwap": 4016.47,
-      "volume_z": -0.251,
+      "vwap": "NA",
+      "volume_z": "NA",
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 53.96,
-      "atr14": 1.279,
-      "vwap": 53.98,
-      "volume_z": -0.252,
+      "last_close": "NA",
+      "atr14": 1.231,
+      "vwap": "NA",
+      "volume_z": 0.0,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 101.752,
+      "last_close": "NA",
       "atr14": 0.487,
       "vwap": "NA",
       "volume_z": "NA",
@@ -41,7 +41,7 @@
       "label": "AUD/USD",
       "decimals": 5,
       "last_close": "NA",
-      "atr14": 0.00494,
+      "atr14": 0.00484,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -68,49 +68,49 @@
   "pivots": {
     "basis_date": "2026-10-23",
     "prev_high": 4050.2,
-    "prev_low": 3989.2,
-    "prev_close": 4010.0,
-    "PP": 4016.47,
-    "R1": 4043.73,
-    "R2": 4077.47,
-    "S1": 3982.73,
-    "S2": 3955.47
+    "prev_low": 3989.1,
+    "prev_close": 4007.9,
+    "PP": 4015.73,
+    "R1": 4042.37,
+    "R2": 4076.83,
+    "S1": 3981.27,
+    "S2": 3954.63
   },
   "smc": {
     "fvgs": [
       {
-        "time": "2026-10-22 03:30",
+        "time": "2026-10-23 14:30",
         "direction": "Bearish",
-        "zone_low": 4116.8,
-        "zone_high": 4123.9,
+        "zone_low": 4015.4,
+        "zone_high": 4020.5,
         "status": "OPEN"
       },
       {
-        "time": "2026-10-22 13:45",
-        "direction": "Bearish",
-        "zone_low": 4082.7,
-        "zone_high": 4090.2,
+        "time": "2026-10-23 16:00",
+        "direction": "Bullish",
+        "zone_low": 4013.1,
+        "zone_high": 4015.4,
         "status": "OPEN"
       },
       {
-        "time": "2026-10-22 18:15",
+        "time": "2026-10-23 17:15",
         "direction": "Bearish",
-        "zone_low": 4056.4,
-        "zone_high": 4058.8,
+        "zone_low": 4011.2,
+        "zone_high": 4012.8,
         "status": "OPEN"
       },
       {
-        "time": "2026-10-22 18:45",
-        "direction": "Bearish",
-        "zone_low": 4050.1,
-        "zone_high": 4051.6,
+        "time": "2026-10-23 18:00",
+        "direction": "Bullish",
+        "zone_low": 4010.7,
+        "zone_high": 4011.2,
         "status": "OPEN"
       },
       {
-        "time": "2026-10-23 14:15",
+        "time": "2026-10-23 20:15",
         "direction": "Bearish",
-        "zone_low": 4022.6,
-        "zone_high": 4030.3,
+        "zone_low": 4011.3,
+        "zone_high": 4011.6,
         "status": "OPEN"
       }
     ],
@@ -133,7 +133,7 @@
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
     "atr14": 71.89,
-    "stop_distance_usd": 107.83,
+    "stop_distance_usd": 107.84,
     "lot_size": 0.0,
     "tradeable": false,
     "status": "UN-TRADEABLE (Exceeds Risk Limit)",
