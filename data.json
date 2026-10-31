@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-30 23:15:22",
+  "generated_utc": "2026-10-31 02:37:53",
   "assets": {
     "GC=F": {
       "label": "Gold",
@@ -7,16 +7,16 @@
       "last_close": 3884.9,
       "atr14": 74.95,
       "vwap": 3949.58,
-      "volume_z": -1.516,
+      "volume_z": -1.517,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
       "last_close": 49.135,
-      "atr14": 1.345,
-      "vwap": 49.98,
-      "volume_z": -1.377,
+      "atr14": 1.346,
+      "vwap": 49.55,
+      "volume_z": -0.28,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
@@ -40,8 +40,8 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.70353,
-      "atr14": 0.00486,
+      "last_close": "NA",
+      "atr14": 0.00488,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -49,7 +49,7 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.11657,
+      "last_close": "NA",
       "atr14": 0.00611,
       "vwap": "NA",
       "volume_z": "NA",
@@ -58,23 +58,23 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 157.519,
-      "atr14": 0.927,
+      "last_close": "NA",
+      "atr14": 0.926,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
     }
   },
   "pivots": {
-    "basis_date": "2026-10-29",
-    "prev_high": 4081.7,
-    "prev_low": 4016.3,
-    "prev_close": 4031.4,
-    "PP": 4043.13,
-    "R1": 4069.97,
-    "R2": 4108.53,
-    "S1": 4004.57,
-    "S2": 3977.73
+    "basis_date": "2026-10-30",
+    "prev_high": 4038.2,
+    "prev_low": 3879.3,
+    "prev_close": 3884.9,
+    "PP": 3934.13,
+    "R1": 3988.97,
+    "R2": 4093.03,
+    "S1": 3830.07,
+    "S2": 3775.23
   },
   "smc": {
     "fvgs": [
@@ -128,36 +128,7 @@
     "short": 37273.0,
     "net": 186451.0
   },
-  "news": [
-    {
-      "time_utc": "03:02",
-      "country": "JPY",
-      "title": "BOJ Outlook Report",
-      "forecast": "-",
-      "previous": "-"
-    },
-    {
-      "time_utc": "03:02",
-      "country": "JPY",
-      "title": "BOJ Policy Rate",
-      "forecast": "<1.25%",
-      "previous": "<1.25%"
-    },
-    {
-      "time_utc": "03:02",
-      "country": "JPY",
-      "title": "Monetary Policy Statement",
-      "forecast": "-",
-      "previous": "-"
-    },
-    {
-      "time_utc": "06:30",
-      "country": "JPY",
-      "title": "BOJ Press Conference",
-      "forecast": "-",
-      "previous": "-"
-    }
-  ],
+  "news": [],
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
