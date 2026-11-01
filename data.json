@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-31 22:41:01",
+  "generated_utc": "2026-11-01 01:28:57",
   "assets": {
     "GC=F": {
       "label": "Gold",
@@ -40,7 +40,7 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": "NA",
+      "last_close": 0.70353,
       "atr14": 0.00467,
       "vwap": "NA",
       "volume_z": "NA",
