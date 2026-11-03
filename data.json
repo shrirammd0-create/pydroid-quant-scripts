@@ -1,28 +1,28 @@
 {
-  "generated_utc": "2026-11-03 17:33:20",
+  "generated_utc": "2026-11-03 22:31:15",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 3939.8,
-      "atr14": 76.08,
-      "vwap": 3942.4,
-      "volume_z": -1.319,
+      "last_close": 3940.2,
+      "atr14": 76.01,
+      "vwap": 3941.71,
+      "volume_z": -1.048,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 49.74,
+      "last_close": 49.81,
       "atr14": 1.3,
       "vwap": 49.72,
-      "volume_z": -1.57,
+      "volume_z": -1.114,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 101.824,
+      "last_close": 101.869,
       "atr14": 0.453,
       "vwap": "NA",
       "volume_z": "NA",
@@ -31,7 +31,7 @@
     "^GVZ": {
       "label": "Gold VIX",
       "decimals": 2,
-      "last_close": 25.54,
+      "last_close": 25.82,
       "atr14": 1.33,
       "vwap": "NA",
       "volume_z": "NA",
@@ -40,7 +40,7 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.6974,
+      "last_close": 0.69677,
       "atr14": 0.00487,
       "vwap": "NA",
       "volume_z": "NA",
@@ -49,7 +49,7 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.11995,
+      "last_close": 1.11944,
       "atr14": 0.00597,
       "vwap": "NA",
       "volume_z": "NA",
@@ -58,8 +58,8 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 158.49,
-      "atr14": 0.913,
+      "last_close": 158.674,
+      "atr14": 0.925,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -79,20 +79,6 @@
   "smc": {
     "fvgs": [
       {
-        "time": "2026-11-01 23:15",
-        "direction": "Bullish",
-        "zone_low": 3898.9,
-        "zone_high": 3901.1,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-11-03 12:30",
-        "direction": "Bullish",
-        "zone_low": 3916.5,
-        "zone_high": 3920.8,
-        "status": "OPEN"
-      },
-      {
         "time": "2026-11-03 13:00",
         "direction": "Bullish",
         "zone_low": 3926.4,
@@ -111,6 +97,20 @@
         "direction": "Bearish",
         "zone_low": 3946.4,
         "zone_high": 3952.7,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-11-03 21:30",
+        "direction": "Bullish",
+        "zone_low": 3932.4,
+        "zone_high": 3936.7,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-11-03 21:59",
+        "direction": "Bullish",
+        "zone_low": 3939.0,
+        "zone_high": 3940.2,
         "status": "OPEN"
       }
     ],
@@ -182,8 +182,8 @@
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
-    "atr14": 76.08,
-    "stop_distance_usd": 114.12,
+    "atr14": 76.01,
+    "stop_distance_usd": 114.01,
     "lot_size": 0.0,
     "tradeable": false,
     "status": "UN-TRADEABLE (Exceeds Risk Limit)",
