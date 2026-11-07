@@ -1,28 +1,28 @@
 {
-  "generated_utc": "2026-11-06 20:35:37",
+  "generated_utc": "2026-11-07 00:21:30",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 4070.9,
+      "last_close": 4079.5,
       "atr14": 84.84,
-      "vwap": 4067.6,
-      "volume_z": -1.342,
+      "vwap": 4067.78,
+      "volume_z": -0.95,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 51.96,
+      "last_close": 51.965,
       "atr14": 1.523,
       "vwap": 51.94,
-      "volume_z": -1.521,
+      "volume_z": -1.098,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 102.316,
+      "last_close": 102.279,
       "atr14": 0.496,
       "vwap": "NA",
       "volume_z": "NA",
@@ -31,7 +31,7 @@
     "^GVZ": {
       "label": "Gold VIX",
       "decimals": 2,
-      "last_close": 26.0,
+      "last_close": 25.97,
       "atr14": 1.47,
       "vwap": "NA",
       "volume_z": "NA",
@@ -40,8 +40,8 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.68681,
-      "atr14": 0.00533,
+      "last_close": "NA",
+      "atr14": 0.00563,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -49,7 +49,7 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.11408,
+      "last_close": "NA",
       "atr14": 0.00648,
       "vwap": "NA",
       "volume_z": "NA",
@@ -58,23 +58,23 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 158.471,
-      "atr14": 1.008,
+      "last_close": "NA",
+      "atr14": 0.988,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
     }
   },
   "pivots": {
-    "basis_date": "2026-11-05",
-    "prev_high": 4155.8,
-    "prev_low": 4067.0,
-    "prev_close": 4113.5,
-    "PP": 4112.1,
-    "R1": 4157.2,
-    "R2": 4200.9,
-    "S1": 4068.4,
-    "S2": 4023.3
+    "basis_date": "2026-11-06",
+    "prev_high": 4116.2,
+    "prev_low": 4037.0,
+    "prev_close": 4079.5,
+    "PP": 4077.57,
+    "R1": 4118.13,
+    "R2": 4156.77,
+    "S1": 4038.93,
+    "S2": 3998.37
   },
   "smc": {
     "fvgs": [
@@ -107,10 +107,10 @@
         "status": "OPEN"
       },
       {
-        "time": "2026-11-06 19:30",
-        "direction": "Bearish",
-        "zone_low": 4074.6,
-        "zone_high": 4081.0,
+        "time": "2026-11-06 21:59",
+        "direction": "Bullish",
+        "zone_low": 4075.3,
+        "zone_high": 4079.5,
         "status": "OPEN"
       }
     ],
@@ -128,57 +128,7 @@
     "short": 40982.0,
     "net": 179548.0
   },
-  "news": [
-    {
-      "time_utc": "13:30",
-      "country": "CAD",
-      "title": "Employment Change",
-      "forecast": "14.6K",
-      "previous": "-68.3K"
-    },
-    {
-      "time_utc": "13:30",
-      "country": "CAD",
-      "title": "Unemployment Rate",
-      "forecast": "6.5%",
-      "previous": "6.5%"
-    },
-    {
-      "time_utc": "13:30",
-      "country": "USD",
-      "title": "Average Hourly Earnings m/m",
-      "forecast": "0.3%",
-      "previous": "0.1%"
-    },
-    {
-      "time_utc": "13:30",
-      "country": "USD",
-      "title": "Non-Farm Employment Change",
-      "forecast": "65K",
-      "previous": "29K"
-    },
-    {
-      "time_utc": "13:30",
-      "country": "USD",
-      "title": "Unemployment Rate",
-      "forecast": "4.2%",
-      "previous": "4.2%"
-    },
-    {
-      "time_utc": "16:00",
-      "country": "JPY",
-      "title": "BOJ Gov Ueda Speaks",
-      "forecast": "-",
-      "previous": "-"
-    },
-    {
-      "time_utc": "21:45",
-      "country": "NZD",
-      "title": "Parliamentary Elections",
-      "forecast": "-",
-      "previous": "-"
-    }
-  ],
+  "news": [],
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
