@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-07 21:49:38",
+  "generated_utc": "2026-11-08 01:05:48",
   "assets": {
     "GC=F": {
       "label": "Gold",
@@ -40,7 +40,7 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": "NA",
+      "last_close": 0.68681,
       "atr14": 0.00546,
       "vwap": "NA",
       "volume_z": "NA",
@@ -58,7 +58,7 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": "NA",
+      "last_close": 158.425,
       "atr14": 0.998,
       "vwap": "NA",
       "volume_z": "NA",
