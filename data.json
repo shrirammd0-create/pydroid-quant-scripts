@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-13 23:32:57",
+  "generated_utc": "2026-11-14 03:34:54",
   "assets": {
     "GC=F": {
       "label": "Gold",
@@ -40,7 +40,7 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.67742,
+      "last_close": "NA",
       "atr14": 0.0065,
       "vwap": "NA",
       "volume_z": "NA",
@@ -49,8 +49,8 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.10278,
-      "atr14": 0.00839,
+      "last_close": "NA",
+      "atr14": 0.00836,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -58,23 +58,23 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 159.686,
-      "atr14": 0.954,
+      "last_close": "NA",
+      "atr14": 0.939,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
     }
   },
   "pivots": {
-    "basis_date": "2026-11-12",
-    "prev_high": 4005.9,
-    "prev_low": 3856.7,
-    "prev_close": 3885.3,
-    "PP": 3915.97,
-    "R1": 3975.23,
-    "R2": 4065.17,
-    "S1": 3826.03,
-    "S2": 3766.77
+    "basis_date": "2026-11-13",
+    "prev_high": 3927.2,
+    "prev_low": 3871.1,
+    "prev_close": 3887.6,
+    "PP": 3895.3,
+    "R1": 3919.5,
+    "R2": 3951.4,
+    "S1": 3863.4,
+    "S2": 3839.2
   },
   "smc": {
     "fvgs": [
@@ -128,22 +128,7 @@
     "short": 40982.0,
     "net": 179548.0
   },
-  "news": [
-    {
-      "time_utc": "13:30",
-      "country": "USD",
-      "title": "Core PPI m/m",
-      "forecast": "0.3%",
-      "previous": "0.7%"
-    },
-    {
-      "time_utc": "13:30",
-      "country": "USD",
-      "title": "PPI m/m",
-      "forecast": "0.4%",
-      "previous": "1.3%"
-    }
-  ],
+  "news": [],
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
