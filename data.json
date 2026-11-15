@@ -1,13 +1,13 @@
 {
-  "generated_utc": "2026-11-15 07:51:20",
+  "generated_utc": "2026-11-15 15:22:38",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
       "last_close": 3886.3,
       "atr14": 98.26,
-      "vwap": 3894.78,
-      "volume_z": -2.328,
+      "vwap": 3894.82,
+      "volume_z": -2.202,
       "body_ratio": "NA"
     },
     "SI=F": {
@@ -15,8 +15,8 @@
       "decimals": 3,
       "last_close": 49.121,
       "atr14": 1.632,
-      "vwap": 49.61,
-      "volume_z": -1.669,
+      "vwap": 49.62,
+      "volume_z": -1.632,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
