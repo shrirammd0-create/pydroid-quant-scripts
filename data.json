@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-21 07:44:39",
+  "generated_utc": "2026-11-21 15:39:08",
   "assets": {
     "GC=F": {
       "label": "Gold",
@@ -79,6 +79,13 @@
   "smc": {
     "fvgs": [
       {
+        "time": "2026-11-20 10:45",
+        "direction": "Bullish",
+        "zone_low": 3585.0,
+        "zone_high": 3586.3,
+        "status": "OPEN"
+      },
+      {
         "time": "2026-11-20 12:00",
         "direction": "Bearish",
         "zone_low": 3577.8,
@@ -104,13 +111,6 @@
         "direction": "Bullish",
         "zone_low": 3517.0,
         "zone_high": 3519.2,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-11-20 21:45",
-        "direction": "Bullish",
-        "zone_low": 3525.3,
-        "zone_high": 3525.4,
         "status": "OPEN"
       }
     ],
