@@ -1,29 +1,29 @@
 {
-  "generated_utc": "2026-11-23 22:50:03",
+  "generated_utc": "2026-11-24 06:46:08",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 3634.4,
-      "atr14": 114.81,
-      "vwap": 3639.74,
-      "volume_z": -1.52,
+      "last_close": 3616.9,
+      "atr14": 108.21,
+      "vwap": 3645.17,
+      "volume_z": -1.856,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 42.99,
-      "atr14": 1.782,
+      "last_close": 41.975,
+      "atr14": 1.668,
       "vwap": 42.84,
-      "volume_z": -1.168,
+      "volume_z": -1.651,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 104.333,
-      "atr14": 0.585,
+      "last_close": 104.306,
+      "atr14": 0.54,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -40,8 +40,8 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.66322,
-      "atr14": 0.00732,
+      "last_close": 0.66375,
+      "atr14": 0.00697,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -49,8 +49,8 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.09063,
-      "atr14": 0.00804,
+      "last_close": 1.09123,
+      "atr14": 0.00792,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -58,26 +58,33 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 158.97,
-      "atr14": 0.986,
+      "last_close": 159.293,
+      "atr14": 0.916,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
     }
   },
   "pivots": {
-    "basis_date": "2026-11-20",
-    "prev_high": 3638.1,
-    "prev_low": 3502.9,
-    "prev_close": 3515.4,
-    "PP": 3552.13,
-    "R1": 3601.37,
-    "R2": 3687.33,
-    "S1": 3466.17,
-    "S2": 3416.93
+    "basis_date": "2026-11-23",
+    "prev_high": 3691.0,
+    "prev_low": 3552.3,
+    "prev_close": 3651.4,
+    "PP": 3631.57,
+    "R1": 3710.83,
+    "R2": 3770.27,
+    "S1": 3572.13,
+    "S2": 3492.87
   },
   "smc": {
     "fvgs": [
+      {
+        "time": "2026-11-23 03:15",
+        "direction": "Bullish",
+        "zone_low": 3595.1,
+        "zone_high": 3599.8,
+        "status": "OPEN"
+      },
       {
         "time": "2026-11-23 08:45",
         "direction": "Bullish",
@@ -86,31 +93,24 @@
         "status": "OPEN"
       },
       {
-        "time": "2026-11-23 14:00",
-        "direction": "Bullish",
-        "zone_low": 3628.0,
-        "zone_high": 3647.0,
+        "time": "2026-11-24 02:00",
+        "direction": "Bearish",
+        "zone_low": 3658.7,
+        "zone_high": 3661.1,
         "status": "OPEN"
       },
       {
-        "time": "2026-11-23 17:45",
+        "time": "2026-11-24 02:45",
         "direction": "Bearish",
-        "zone_low": 3654.4,
-        "zone_high": 3660.3,
+        "zone_low": 3646.3,
+        "zone_high": 3649.4,
         "status": "OPEN"
       },
       {
-        "time": "2026-11-23 19:45",
+        "time": "2026-11-24 03:00",
         "direction": "Bearish",
-        "zone_low": 3644.0,
-        "zone_high": 3649.7,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-11-23 21:00",
-        "direction": "Bearish",
-        "zone_low": 3638.2,
-        "zone_high": 3638.3,
+        "zone_low": 3641.6,
+        "zone_high": 3645.3,
         "status": "OPEN"
       }
     ],
@@ -132,8 +132,8 @@
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
-    "atr14": 114.81,
-    "stop_distance_usd": 172.21,
+    "atr14": 108.21,
+    "stop_distance_usd": 162.32,
     "lot_size": 0.0,
     "tradeable": false,
     "status": "UN-TRADEABLE (Exceeds Risk Limit)",
@@ -142,7 +142,7 @@
   "alert": {
     "active": false,
     "conditions": {
-      "close_above_r1": true,
+      "close_above_r1": false,
       "volume_z_above_1_5": false,
       "body_ratio_above_0_70": false,
       "passes_risk_limit": false
