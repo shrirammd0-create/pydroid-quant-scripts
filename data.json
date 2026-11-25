@@ -1,29 +1,29 @@
 {
-  "generated_utc": "2026-11-24 18:39:21",
+  "generated_utc": "2026-11-25 02:47:46",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 3561.8,
-      "atr14": 112.39,
-      "vwap": 3614.77,
-      "volume_z": -1.84,
+      "last_close": 3563.2,
+      "atr14": 109.88,
+      "vwap": 3548.21,
+      "volume_z": -2.43,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 40.805,
-      "atr14": 1.767,
-      "vwap": 41.81,
-      "volume_z": -2.04,
+      "last_close": 40.965,
+      "atr14": 1.678,
+      "vwap": 40.82,
+      "volume_z": -1.516,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 103.805,
-      "atr14": 0.577,
+      "last_close": 103.862,
+      "atr14": 0.547,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -32,16 +32,16 @@
       "label": "Gold VIX",
       "decimals": 2,
       "last_close": 31.25,
-      "atr14": 1.92,
+      "atr14": 1.98,
       "vwap": "NA",
       "volume_z": "NA",
-      "body_ratio": "NA"
+      "body_ratio": 0.333
     },
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.66476,
-      "atr14": 0.0071,
+      "last_close": 0.6623,
+      "atr14": 0.00685,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -49,8 +49,8 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.09721,
-      "atr14": 0.00803,
+      "last_close": 1.09601,
+      "atr14": 0.00799,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -58,47 +58,26 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 159.29,
-      "atr14": 0.934,
+      "last_close": 159.244,
+      "atr14": 0.901,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
     }
   },
   "pivots": {
-    "basis_date": "2026-11-23",
-    "prev_high": 3691.0,
-    "prev_low": 3552.3,
-    "prev_close": 3651.4,
-    "PP": 3631.57,
-    "R1": 3710.83,
-    "R2": 3770.27,
-    "S1": 3572.13,
-    "S2": 3492.87
+    "basis_date": "2026-11-24",
+    "prev_high": 3676.7,
+    "prev_low": 3545.4,
+    "prev_close": 3561.9,
+    "PP": 3594.67,
+    "R1": 3643.93,
+    "R2": 3725.97,
+    "S1": 3512.63,
+    "S2": 3463.37
   },
   "smc": {
     "fvgs": [
-      {
-        "time": "2026-11-24 02:00",
-        "direction": "Bearish",
-        "zone_low": 3658.7,
-        "zone_high": 3661.1,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-11-24 13:15",
-        "direction": "Bearish",
-        "zone_low": 3632.0,
-        "zone_high": 3640.5,
-        "status": "OPEN"
-      },
-      {
-        "time": "2026-11-24 15:15",
-        "direction": "Bearish",
-        "zone_low": 3602.2,
-        "zone_high": 3618.5,
-        "status": "OPEN"
-      },
       {
         "time": "2026-11-24 15:30",
         "direction": "Bearish",
@@ -111,6 +90,27 @@
         "direction": "Bearish",
         "zone_low": 3571.2,
         "zone_high": 3577.8,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-11-25 01:45",
+        "direction": "Bullish",
+        "zone_low": 3543.2,
+        "zone_high": 3544.1,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-11-25 02:15",
+        "direction": "Bullish",
+        "zone_low": 3553.6,
+        "zone_high": 3556.1,
+        "status": "OPEN"
+      },
+      {
+        "time": "2026-11-25 02:30",
+        "direction": "Bullish",
+        "zone_low": 3559.8,
+        "zone_high": 3562.3,
         "status": "OPEN"
       }
     ],
@@ -128,12 +128,48 @@
     "short": 43919.0,
     "net": 166132.0
   },
-  "news": [],
+  "news": [
+    {
+      "time_utc": "00:30",
+      "country": "AUD",
+      "title": "CPI m/m",
+      "forecast": "0.4%",
+      "previous": "0.8%"
+    },
+    {
+      "time_utc": "00:30",
+      "country": "AUD",
+      "title": "CPI y/y",
+      "forecast": "4.7%",
+      "previous": "4.3%"
+    },
+    {
+      "time_utc": "00:30",
+      "country": "AUD",
+      "title": "Trimmed Mean CPI m/m",
+      "forecast": "0.3%",
+      "previous": "0.3%"
+    },
+    {
+      "time_utc": "13:30",
+      "country": "USD",
+      "title": "Core PCE Price Index m/m",
+      "forecast": "0.3%",
+      "previous": "0.3%"
+    },
+    {
+      "time_utc": "13:30",
+      "country": "USD",
+      "title": "Prelim GDP q/q",
+      "forecast": "3.5%",
+      "previous": "3.4%"
+    }
+  ],
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
-    "atr14": 112.39,
-    "stop_distance_usd": 168.59,
+    "atr14": 109.88,
+    "stop_distance_usd": 164.82,
     "lot_size": 0.0,
     "tradeable": false,
     "status": "UN-TRADEABLE (Exceeds Risk Limit)",
