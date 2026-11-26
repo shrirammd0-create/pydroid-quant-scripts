@@ -1,12 +1,12 @@
 {
-  "generated_utc": "2026-11-26 13:33:23",
+  "generated_utc": "2026-11-26 22:36:42",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
       "last_close": 3620.4,
       "atr14": 119.88,
-      "vwap": 3607.18,
+      "vwap": 3607.19,
       "volume_z": 0.665,
       "body_ratio": 0.923
     },
@@ -23,7 +23,7 @@
       "label": "DXY",
       "decimals": 3,
       "last_close": 103.81,
-      "atr14": 0.534,
+      "atr14": 0.537,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": 0.629
@@ -40,7 +40,7 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.6637,
+      "last_close": 0.66357,
       "atr14": 0.00641,
       "vwap": "NA",
       "volume_z": "NA",
@@ -49,8 +49,8 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.0983,
-      "atr14": 0.00751,
+      "last_close": 1.09733,
+      "atr14": 0.00756,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -58,8 +58,8 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 159.238,
-      "atr14": 0.883,
+      "last_close": 159.203,
+      "atr14": 0.884,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
