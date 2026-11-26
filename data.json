@@ -1,29 +1,29 @@
 {
-  "generated_utc": "2026-11-25 21:41:12",
+  "generated_utc": "2026-11-26 03:47:05",
   "assets": {
     "GC=F": {
       "label": "Gold",
       "decimals": 2,
-      "last_close": 3604.9,
-      "atr14": 118.58,
-      "vwap": 3528.89,
-      "volume_z": -1.376,
+      "last_close": 3605.2,
+      "atr14": 119.88,
+      "vwap": 3604.88,
+      "volume_z": -1.882,
       "body_ratio": "NA"
     },
     "SI=F": {
       "label": "Silver",
       "decimals": 3,
-      "last_close": 41.41,
-      "atr14": 1.856,
-      "vwap": 39.97,
-      "volume_z": -1.255,
+      "last_close": 41.95,
+      "atr14": 1.806,
+      "vwap": 41.73,
+      "volume_z": -1.013,
       "body_ratio": "NA"
     },
     "DX-Y.NYB": {
       "label": "DXY",
       "decimals": 3,
-      "last_close": 103.706,
-      "atr14": 0.579,
+      "last_close": 103.811,
+      "atr14": 0.532,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -32,7 +32,7 @@
       "label": "Gold VIX",
       "decimals": 2,
       "last_close": 31.25,
-      "atr14": 1.98,
+      "atr14": 2.24,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": 0.333
@@ -40,8 +40,8 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.663,
-      "atr14": 0.00729,
+      "last_close": 0.66414,
+      "atr14": 0.00639,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -49,8 +49,8 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.09782,
-      "atr14": 0.00817,
+      "last_close": 1.09613,
+      "atr14": 0.0075,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -58,33 +58,26 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 159.191,
-      "atr14": 0.937,
+      "last_close": 159.202,
+      "atr14": 0.878,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
     }
   },
   "pivots": {
-    "basis_date": "2026-11-24",
-    "prev_high": 3676.7,
-    "prev_low": 3545.4,
-    "prev_close": 3561.9,
-    "PP": 3594.67,
-    "R1": 3643.93,
-    "R2": 3725.97,
-    "S1": 3512.63,
-    "S2": 3463.37
+    "basis_date": "2026-11-25",
+    "prev_high": 3588.9,
+    "prev_low": 3425.2,
+    "prev_close": 3535.8,
+    "PP": 3516.63,
+    "R1": 3608.07,
+    "R2": 3680.33,
+    "S1": 3444.37,
+    "S2": 3352.93
   },
   "smc": {
     "fvgs": [
-      {
-        "time": "2026-11-24 15:15",
-        "direction": "Bearish",
-        "zone_low": 3602.2,
-        "zone_high": 3618.5,
-        "status": "OPEN"
-      },
       {
         "time": "2026-11-25 17:00",
         "direction": "Bullish",
@@ -112,6 +105,13 @@
         "zone_low": 3578.5,
         "zone_high": 3594.5,
         "status": "OPEN"
+      },
+      {
+        "time": "2026-11-26 02:15",
+        "direction": "Bullish",
+        "zone_low": 3597.8,
+        "zone_high": 3606.8,
+        "status": "OPEN"
       }
     ],
     "sweep": {
@@ -128,48 +128,12 @@
     "short": 43919.0,
     "net": 166132.0
   },
-  "news": [
-    {
-      "time_utc": "00:30",
-      "country": "AUD",
-      "title": "CPI m/m",
-      "forecast": "0.4%",
-      "previous": "0.8%"
-    },
-    {
-      "time_utc": "00:30",
-      "country": "AUD",
-      "title": "CPI y/y",
-      "forecast": "4.7%",
-      "previous": "4.3%"
-    },
-    {
-      "time_utc": "00:30",
-      "country": "AUD",
-      "title": "Trimmed Mean CPI m/m",
-      "forecast": "0.3%",
-      "previous": "0.3%"
-    },
-    {
-      "time_utc": "13:30",
-      "country": "USD",
-      "title": "Core PCE Price Index m/m",
-      "forecast": "0.3%",
-      "previous": "0.3%"
-    },
-    {
-      "time_utc": "13:30",
-      "country": "USD",
-      "title": "Prelim GDP q/q",
-      "forecast": "3.5%",
-      "previous": "3.4%"
-    }
-  ],
+  "news": [],
   "risk": {
     "account_usd": 5000.0,
     "max_risk_usd": 25.0,
-    "atr14": 118.58,
-    "stop_distance_usd": 177.87,
+    "atr14": 119.88,
+    "stop_distance_usd": 179.82,
     "lot_size": 0.0,
     "tradeable": false,
     "status": "UN-TRADEABLE (Exceeds Risk Limit)",
