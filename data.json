@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-27 22:51:10",
+  "generated_utc": "2026-11-28 04:32:04",
   "assets": {
     "GC=F": {
       "label": "Gold",
@@ -31,8 +31,8 @@
     "^GVZ": {
       "label": "Gold VIX",
       "decimals": 2,
-      "last_close": "NA",
-      "atr14": 2.24,
+      "last_close": 31.78,
+      "atr14": 4.74,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -40,8 +40,8 @@
     "AUDUSD=X": {
       "label": "AUD/USD",
       "decimals": 5,
-      "last_close": 0.66507,
-      "atr14": 0.00636,
+      "last_close": "NA",
+      "atr14": 0.0061,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -49,8 +49,8 @@
     "EURUSD=X": {
       "label": "EUR/USD",
       "decimals": 5,
-      "last_close": 1.09385,
-      "atr14": 0.00738,
+      "last_close": "NA",
+      "atr14": 0.00736,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
@@ -58,23 +58,23 @@
     "USDJPY=X": {
       "label": "USD/JPY",
       "decimals": 3,
-      "last_close": 159.515,
-      "atr14": 0.853,
+      "last_close": "NA",
+      "atr14": 0.852,
       "vwap": "NA",
       "volume_z": "NA",
       "body_ratio": "NA"
     }
   },
   "pivots": {
-    "basis_date": "2026-11-25",
-    "prev_high": 3588.9,
-    "prev_low": 3425.2,
-    "prev_close": 3535.8,
-    "PP": 3516.63,
-    "R1": 3608.07,
-    "R2": 3680.33,
-    "S1": 3444.37,
-    "S2": 3352.93
+    "basis_date": "2026-11-27",
+    "prev_high": 3712.8,
+    "prev_low": 3578.8,
+    "prev_close": 3668.5,
+    "PP": 3653.37,
+    "R1": 3727.93,
+    "R2": 3787.37,
+    "S1": 3593.93,
+    "S2": 3519.37
   },
   "smc": {
     "fvgs": [
@@ -142,7 +142,7 @@
   "alert": {
     "active": false,
     "conditions": {
-      "close_above_r1": true,
+      "close_above_r1": false,
       "volume_z_above_1_5": false,
       "body_ratio_above_0_70": false,
       "passes_risk_limit": false
